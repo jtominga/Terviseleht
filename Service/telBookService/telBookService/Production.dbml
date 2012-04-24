@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="telBookBase" Class="ProductionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JANZ-LAPTOP;Initial Catalog=telBookBase;Integrated Security=True" SettingsObjectName="telBookService.Properties.Settings" SettingsPropertyName="telBookBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Contact" Member="Contacts">
+    <Type Name="Contact">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Eesnimi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Perenimi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[E-mail]" Member="E_mail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Skype" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aadress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Loodud" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Muudetud" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Kustutatud" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="User_fk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_Contact" Member="User" ThisKey="User_fk" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nimetus" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_User" Member="Users" ThisKey="ID" OtherKey="Role_fk" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="[E-mail]" Member="E_mail" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Loodud" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Muudetud" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Kustutatud" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Role_fk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_Contact" Member="Contacts" ThisKey="ID" OtherKey="User_fk" Type="Contact" />
+      <Association Name="Role_User" Member="Role" ThisKey="Role_fk" OtherKey="ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

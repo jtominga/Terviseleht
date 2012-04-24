@@ -19,7 +19,13 @@ namespace telBookService
         [DataMember]
         public string last;
 
+        public Contact(DBA.Production.Contact contact) 
+        {
+
+        }
+
     }
+
     [ServiceContract]
     public interface ItelBookService
     {

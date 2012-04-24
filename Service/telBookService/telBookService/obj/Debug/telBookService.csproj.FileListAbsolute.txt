@@ -4,3 +4,9 @@ C:\Users\Jones\Desktop\Service\telBookService\telBookService\bin\Debug\telBookSe
 C:\Users\Jones\Desktop\Service\telBookService\telBookService\bin\Debug\telBookService.pdb
 C:\Users\Jones\Desktop\Service\telBookService\telBookService\obj\Debug\telBookService.dll
 C:\Users\Jones\Desktop\Service\telBookService\telBookService\obj\Debug\telBookService.pdb
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\telBookService\obj\Debug\ResolveAssemblyReference.cache
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\telBookService\obj\Debug\telBookService.dll
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\telBookService\obj\Debug\telBookService.pdb
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\telBookService\bin\Debug\telBookService.dll.config
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\telBookService\bin\Debug\telBookService.dll
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\telBookService\bin\Debug\telBookService.pdb
