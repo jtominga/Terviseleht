@@ -1,0 +1,6 @@
+C:\Users\Jones\Desktop\Service\telBookService\telBookService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jones\Desktop\Service\telBookService\telBookService\bin\Debug\telBookService.dll.config
+C:\Users\Jones\Desktop\Service\telBookService\telBookService\bin\Debug\telBookService.dll
+C:\Users\Jones\Desktop\Service\telBookService\telBookService\bin\Debug\telBookService.pdb
+C:\Users\Jones\Desktop\Service\telBookService\telBookService\obj\Debug\telBookService.dll
+C:\Users\Jones\Desktop\Service\telBookService\telBookService\obj\Debug\telBookService.pdb
