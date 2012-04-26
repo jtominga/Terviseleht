@@ -11,13 +11,20 @@ namespace telBookService
     public class Contact
     {
         [DataMember]
+        public string firstName;
+        [DataMember]
+        public string lastName;
+        [DataMember]
         public string submitter;
         [DataMember]
         public string tel;
         [DataMember]
-        public string first;
+        public string email;
         [DataMember]
-        public string last;
+        public string skype;
+        [DataMember]
+        public string address;
+        
 
         public Contact(DBA.Production.Contact contact) 
         {
