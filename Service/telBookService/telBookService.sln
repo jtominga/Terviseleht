@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "telBookService", "telBookService\telBookService.csproj", "{A7A51555-6599-45FE-B9E8-A4D66B5E4700}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFTestClient", "WCFTestClient\WCFTestClient.csproj", "{20196DC1-6A6E-48E4-A698-9952E987F805}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7A51555-6599-45FE-B9E8-A4D66B5E4700} = {A7A51555-6599-45FE-B9E8-A4D66B5E4700}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +18,10 @@ Global
 		{A7A51555-6599-45FE-B9E8-A4D66B5E4700}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7A51555-6599-45FE-B9E8-A4D66B5E4700}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7A51555-6599-45FE-B9E8-A4D66B5E4700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20196DC1-6A6E-48E4-A698-9952E987F805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20196DC1-6A6E-48E4-A698-9952E987F805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20196DC1-6A6E-48E4-A698-9952E987F805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20196DC1-6A6E-48E4-A698-9952E987F805}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

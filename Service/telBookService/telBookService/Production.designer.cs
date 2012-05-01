@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DBA.Production
+namespace telBookService
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -33,16 +33,19 @@ namespace DBA.Production
     partial void InsertContact(Contact instance);
     partial void UpdateContact(Contact instance);
     partial void DeleteContact(Contact instance);
-    partial void InsertRole(Role instance);
-    partial void UpdateRole(Role instance);
-    partial void DeleteRole(Role instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertJagatudContact(JagatudContact instance);
+    partial void UpdateJagatudContact(JagatudContact instance);
+    partial void DeleteJagatudContact(JagatudContact instance);
+    partial void InsertRole(Role instance);
+    partial void UpdateRole(Role instance);
+    partial void DeleteRole(Role instance);
     #endregion
 		
 		public ProductionDataContext() : 
-				base(global::telBookService.Properties.Settings.Default.telBookBaseConnectionString, mappingSource)
+				base(global::telBookService.Properties.Settings.Default.telBookBaseConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -79,19 +82,27 @@ namespace DBA.Production
 			}
 		}
 		
-		public System.Data.Linq.Table<Role> Roles
-		{
-			get
-			{
-				return this.GetTable<Role>();
-			}
-		}
-		
 		public System.Data.Linq.Table<User> Users
 		{
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<JagatudContact> JagatudContacts
+		{
+			get
+			{
+				return this.GetTable<JagatudContact>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Role> Roles
+		{
+			get
+			{
+				return this.GetTable<Role>();
 			}
 		}
 	}
@@ -123,6 +134,8 @@ namespace DBA.Production
 		private System.Nullable<System.DateTime> _Kustutatud;
 		
 		private int _User_fk;
+		
+		private EntitySet<JagatudContact> _JagatudContacts;
 		
 		private EntityRef<User> _User;
 		
@@ -156,6 +169,7 @@ namespace DBA.Production
 		
 		public Contact()
 		{
+			this._JagatudContacts = new EntitySet<JagatudContact>(new Action<JagatudContact>(this.attach_JagatudContacts), new Action<JagatudContact>(this.detach_JagatudContacts));
 			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
@@ -200,7 +214,7 @@ namespace DBA.Production
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Perenimi", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Perenimi", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
 		public string Perenimi
 		{
 			get
@@ -384,6 +398,19 @@ namespace DBA.Production
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contact_JagatudContact", Storage="_JagatudContacts", ThisKey="ID", OtherKey="ContactID")]
+		public EntitySet<JagatudContact> JagatudContacts
+		{
+			get
+			{
+				return this._JagatudContacts;
+			}
+			set
+			{
+				this._JagatudContacts.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Contact", Storage="_User", ThisKey="User_fk", OtherKey="ID", IsForeignKey=true)]
 		public User User
 		{
@@ -437,119 +464,17 @@ namespace DBA.Production
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Role")]
-	public partial class Role : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Nimetus;
-		
-		private EntitySet<User> _Users;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNimetusChanging(string value);
-    partial void OnNimetusChanged();
-    #endregion
-		
-		public Role()
-		{
-			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nimetus", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string Nimetus
-		{
-			get
-			{
-				return this._Nimetus;
-			}
-			set
-			{
-				if ((this._Nimetus != value))
-				{
-					this.OnNimetusChanging(value);
-					this.SendPropertyChanging();
-					this._Nimetus = value;
-					this.SendPropertyChanged("Nimetus");
-					this.OnNimetusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Users", ThisKey="ID", OtherKey="Role_fk")]
-		public EntitySet<User> Users
-		{
-			get
-			{
-				return this._Users;
-			}
-			set
-			{
-				this._Users.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Users(User entity)
+		private void attach_JagatudContacts(JagatudContact entity)
 		{
 			this.SendPropertyChanging();
-			entity.Role = this;
+			entity.Contact = this;
 		}
 		
-		private void detach_Users(User entity)
+		private void detach_JagatudContacts(JagatudContact entity)
 		{
 			this.SendPropertyChanging();
-			entity.Role = null;
+			entity.Contact = null;
 		}
 	}
 	
@@ -576,6 +501,8 @@ namespace DBA.Production
 		private int _Role_fk;
 		
 		private EntitySet<Contact> _Contacts;
+		
+		private EntitySet<JagatudContact> _JagatudContacts;
 		
 		private EntityRef<Role> _Role;
 		
@@ -604,6 +531,7 @@ namespace DBA.Production
 		public User()
 		{
 			this._Contacts = new EntitySet<Contact>(new Action<Contact>(this.attach_Contacts), new Action<Contact>(this.detach_Contacts));
+			this._JagatudContacts = new EntitySet<JagatudContact>(new Action<JagatudContact>(this.attach_JagatudContacts), new Action<JagatudContact>(this.detach_JagatudContacts));
 			this._Role = default(EntityRef<Role>);
 			OnCreated();
 		}
@@ -785,6 +713,19 @@ namespace DBA.Production
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_JagatudContact", Storage="_JagatudContacts", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<JagatudContact> JagatudContacts
+		{
+			get
+			{
+				return this._JagatudContacts;
+			}
+			set
+			{
+				this._JagatudContacts.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Role", ThisKey="Role_fk", OtherKey="ID", IsForeignKey=true)]
 		public Role Role
 		{
@@ -849,6 +790,396 @@ namespace DBA.Production
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
+		}
+		
+		private void attach_JagatudContacts(JagatudContact entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_JagatudContacts(JagatudContact entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.JagatudContact")]
+	public partial class JagatudContact : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _ContactID;
+		
+		private int _UserID;
+		
+		private System.DateTime _AlgusKP;
+		
+		private System.Nullable<System.DateTime> _LoppKP;
+		
+		private EntityRef<Contact> _Contact;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnContactIDChanging(int value);
+    partial void OnContactIDChanged();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnAlgusKPChanging(System.DateTime value);
+    partial void OnAlgusKPChanged();
+    partial void OnLoppKPChanging(System.Nullable<System.DateTime> value);
+    partial void OnLoppKPChanged();
+    #endregion
+		
+		public JagatudContact()
+		{
+			this._Contact = default(EntityRef<Contact>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactID", DbType="Int NOT NULL")]
+		public int ContactID
+		{
+			get
+			{
+				return this._ContactID;
+			}
+			set
+			{
+				if ((this._ContactID != value))
+				{
+					if (this._Contact.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnContactIDChanging(value);
+					this.SendPropertyChanging();
+					this._ContactID = value;
+					this.SendPropertyChanged("ContactID");
+					this.OnContactIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AlgusKP", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime AlgusKP
+		{
+			get
+			{
+				return this._AlgusKP;
+			}
+			set
+			{
+				if ((this._AlgusKP != value))
+				{
+					this.OnAlgusKPChanging(value);
+					this.SendPropertyChanging();
+					this._AlgusKP = value;
+					this.SendPropertyChanged("AlgusKP");
+					this.OnAlgusKPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoppKP", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> LoppKP
+		{
+			get
+			{
+				return this._LoppKP;
+			}
+			set
+			{
+				if ((this._LoppKP != value))
+				{
+					this.OnLoppKPChanging(value);
+					this.SendPropertyChanging();
+					this._LoppKP = value;
+					this.SendPropertyChanged("LoppKP");
+					this.OnLoppKPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Contact_JagatudContact", Storage="_Contact", ThisKey="ContactID", OtherKey="ID", IsForeignKey=true)]
+		public Contact Contact
+		{
+			get
+			{
+				return this._Contact.Entity;
+			}
+			set
+			{
+				Contact previousValue = this._Contact.Entity;
+				if (((previousValue != value) 
+							|| (this._Contact.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Contact.Entity = null;
+						previousValue.JagatudContacts.Remove(this);
+					}
+					this._Contact.Entity = value;
+					if ((value != null))
+					{
+						value.JagatudContacts.Add(this);
+						this._ContactID = value.ID;
+					}
+					else
+					{
+						this._ContactID = default(int);
+					}
+					this.SendPropertyChanged("Contact");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_JagatudContact", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.JagatudContacts.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.JagatudContacts.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Role")]
+	public partial class Role : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Nimetus;
+		
+		private string _Kirjedus;
+		
+		private EntitySet<User> _Users;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNimetusChanging(string value);
+    partial void OnNimetusChanged();
+    partial void OnKirjedusChanging(string value);
+    partial void OnKirjedusChanged();
+    #endregion
+		
+		public Role()
+		{
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nimetus", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Nimetus
+		{
+			get
+			{
+				return this._Nimetus;
+			}
+			set
+			{
+				if ((this._Nimetus != value))
+				{
+					this.OnNimetusChanging(value);
+					this.SendPropertyChanging();
+					this._Nimetus = value;
+					this.SendPropertyChanged("Nimetus");
+					this.OnNimetusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Kirjedus", DbType="NVarChar(50)")]
+		public string Kirjedus
+		{
+			get
+			{
+				return this._Kirjedus;
+			}
+			set
+			{
+				if ((this._Kirjedus != value))
+				{
+					this.OnKirjedusChanging(value);
+					this.SendPropertyChanging();
+					this._Kirjedus = value;
+					this.SendPropertyChanged("Kirjedus");
+					this.OnKirjedusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Users", ThisKey="ID", OtherKey="Role_fk")]
+		public EntitySet<User> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.Role = this;
+		}
+		
+		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.Role = null;
 		}
 	}
 }

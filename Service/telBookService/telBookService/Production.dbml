@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="telBookBase" Class="ProductionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=JANZ-LAPTOP;Initial Catalog=telBookBase;Integrated Security=True" SettingsObjectName="telBookService.Properties.Settings" SettingsPropertyName="telBookBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NIXXNAXX\SQLEXPRESS;Initial Catalog=telBookBase;Integrated Security=True" SettingsObjectName="telBookService.Properties.Settings" SettingsPropertyName="telBookBaseConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Contact" Member="Contacts">
     <Type Name="Contact">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Eesnimi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Perenimi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Perenimi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Telefon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="[E-mail]" Member="E_mail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Skype" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -13,14 +13,8 @@
       <Column Name="Muudetud" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="Kustutatud" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="User_fk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Contact_JagatudContact" Member="JagatudContacts" ThisKey="ID" OtherKey="ContactID" Type="JagatudContact" />
       <Association Name="User_Contact" Member="User" ThisKey="User_fk" OtherKey="ID" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Role" Member="Roles">
-    <Type Name="Role">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nimetus" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Association Name="Role_User" Member="Users" ThisKey="ID" OtherKey="Role_fk" Type="User" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="Users">
@@ -34,7 +28,27 @@
       <Column Name="Kustutatud" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="Role_fk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="User_Contact" Member="Contacts" ThisKey="ID" OtherKey="User_fk" Type="Contact" />
+      <Association Name="User_JagatudContact" Member="JagatudContacts" ThisKey="ID" OtherKey="UserID" Type="JagatudContact" />
       <Association Name="Role_User" Member="Role" ThisKey="Role_fk" OtherKey="ID" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JagatudContact" Member="JagatudContacts">
+    <Type Name="JagatudContact">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AlgusKP" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LoppKP" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Association Name="Contact_JagatudContact" Member="Contact" ThisKey="ContactID" OtherKey="ID" Type="Contact" IsForeignKey="true" />
+      <Association Name="User_JagatudContact" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nimetus" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Kirjedus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Role_User" Member="Users" ThisKey="ID" OtherKey="Role_fk" Type="User" />
     </Type>
   </Table>
 </Database>

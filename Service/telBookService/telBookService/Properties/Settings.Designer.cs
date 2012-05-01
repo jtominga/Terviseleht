@@ -26,10 +26,21 @@ namespace telBookService.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JANZ-LAPTOP;Initial Catalog=telBookBase;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=./;Initial Catalog=telBookBase;Integrated Security=True")]
         public string telBookBaseConnectionString {
             get {
                 return ((string)(this["telBookBaseConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NIXXNAXX\\SQLEXPRESS;Initial Catalog=telBookBase;Integrated Security=T" +
+            "rue")]
+        public string telBookBaseConnectionString1 {
+            get {
+                return ((string)(this["telBookBaseConnectionString1"]));
             }
         }
     }
