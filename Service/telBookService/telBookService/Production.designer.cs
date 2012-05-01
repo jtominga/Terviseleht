@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace telBookService
+namespace telBookService.DBA
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;

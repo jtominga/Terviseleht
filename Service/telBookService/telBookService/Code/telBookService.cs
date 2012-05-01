@@ -7,73 +7,10 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using telBookService.Code;
+using telBookService.DBA;
 
 namespace telBookService
 {
-    #region DContact
-    [DataContract]
-    public class DContact
-    {
-        [DataMember]
-        public AuthData authData;
-        [DataMember]
-        public string firstName;
-        [DataMember]
-        public string lastName;
-        [DataMember]
-        public string submitter;
-        [DataMember]
-        public string tel;
-        [DataMember]
-        public string email;
-        [DataMember]
-        public string skype;
-        [DataMember]
-        public string address;
-    }
-    #endregion
-
-    #region DUser
-    [DataContract]
-    public class DUser
-    {
-        [DataMember]
-        public AuthData authData;
-        [DataMember]
-        public string Username;
-        [DataMember]
-        public string Password;
-        [DataMember]
-        public string Email;
-    }
-    #endregion
-
-    #region DSContact
-    [DataContract]
-    public class DSContact
-    {
-        [DataMember]
-        public AuthData authData;
-        [DataMember]
-        public int ContactID;
-        [DataMember]
-        public int UserID;
-        [DataMember]
-        public DateTime AlgusKP;
-        [DataMember]
-        public DateTime LoppKP;
-    }
-    #endregion
-
-    #region DAuth
-    [DataContract]
-    public class DAuth
-    {
-        [DataMember]
-        public AuthData authData;
-    }
-    #endregion
 
     [ServiceContract]
     public interface ItelBookService
