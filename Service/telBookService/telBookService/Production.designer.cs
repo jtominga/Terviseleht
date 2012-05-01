@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace telBookService.DBA
+namespace DBA.Baas
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -45,7 +45,7 @@ namespace telBookService.DBA
     #endregion
 		
 		public ProductionDataContext() : 
-				base(global::telBookService.Properties.Settings.Default.telBookBaseConnectionString1, mappingSource)
+				base(global::telBookService.Properties.Settings.Default.telBookBaseConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
