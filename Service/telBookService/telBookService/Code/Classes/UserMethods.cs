@@ -42,5 +42,15 @@ namespace telBookService
                 db.SubmitChanges();                
             }
         }
+
+        public static void deleteUserPermanentlyById(int id)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = (from x in db.Users where x.ID == id select x).FirstOrDefault();
+                db.Users.DeleteOnSubmit(query);
+                db.SubmitChanges();
+            }
+        }
     }
 }

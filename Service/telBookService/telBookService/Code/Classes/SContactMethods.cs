@@ -27,5 +27,15 @@ namespace telBookService.Code.Classes
                 db.SubmitChanges();
             }
         }
+
+        public static void deleteSharedContactById(int id) 
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var result = (from x in db.JagatudContacts where x.ID == id select x).FirstOrDefault();
+                db.JagatudContacts.DeleteOnSubmit(result);
+                db.SubmitChanges();
+            }
+        }
     }
 }

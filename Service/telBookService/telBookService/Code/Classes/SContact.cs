@@ -13,6 +13,7 @@ namespace telBookService
         public AuthData authData;
 
         #region fields
+        private int _id;
         private int _contactID;
         private int _userID;
         private DateTime _algusKP;
@@ -20,6 +21,12 @@ namespace telBookService
         #endregion
 
         #region properties
+        [DataMember]
+        public int Id
+        {
+            get { return _id; }
+            //set { _id = value; }
+        }
         [DataMember]
         public int ContactID
         {
@@ -50,6 +57,7 @@ namespace telBookService
 
         public SContact(DBA.Baas.JagatudContact scont)
         {
+            this._id = scont.ID;
             this._userID = scont.UserID;
             this._contactID = scont.ContactID;
             this._algusKP = scont.AlgusKP;
@@ -59,6 +67,7 @@ namespace telBookService
         public DBA.Baas.JagatudContact mapToDbJagatudContact()
         {
             DBA.Baas.JagatudContact scont = new DBA.Baas.JagatudContact();
+            scont.ID = this._id;
             scont.UserID = this._userID;
             scont.ContactID = this._contactID;
             scont.AlgusKP = this._algusKP;
