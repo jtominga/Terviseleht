@@ -17,7 +17,7 @@ namespace telBookService
         [OperationContract]
         void deleteContactById(int id);
         [OperationContract]
-        void updateContact(Contact cont);
+        void saveContact(Contact cont);
         [OperationContract]
         List<Contact> getContactsByUser(User usr);
         [OperationContract]
@@ -46,9 +46,9 @@ namespace telBookService
             ContactMethods.deleteContactById(id);
         }
 
-        public void updateContact(Contact cont)
+        public void saveContact(Contact cont)
         {
-            ContactMethods.updateContact(cont);
+            cont.save();
         }
 
         public List<Contact> getContactsByUser(User usr)
