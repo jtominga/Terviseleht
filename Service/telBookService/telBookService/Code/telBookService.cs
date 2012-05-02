@@ -15,7 +15,7 @@ namespace telBookService
         [OperationContract]
         List<Contact> getAllContacts();
         [OperationContract]
-        void deleteContactPermanentlyById(int id);
+        void deleteContactById(int id);
         [OperationContract]
         void updateContact(Contact cont);
         [OperationContract]
@@ -41,9 +41,9 @@ namespace telBookService
             return ContactMethods.getAllContacts();
         }
 
-        public void deleteContactPermanentlyById(int id)
+        public void deleteContactById(int id)
         {
-            ContactMethods.deleteContactPermanentlyById(id);
+            ContactMethods.deleteContactById(id);
         }
 
         public void updateContact(Contact cont)
