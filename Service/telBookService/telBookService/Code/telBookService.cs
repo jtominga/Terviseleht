@@ -21,7 +21,7 @@ namespace telBookService
         [OperationContract]
         List<Contact> getContactsByUser(User usr, int count);
         [OperationContract]
-        List<Contact> getContactById(int id, int count);
+        Contact getContactById(int id);
         [OperationContract]
         List<Contact> getContactByName(string nimi, int count);
         [OperationContract]
