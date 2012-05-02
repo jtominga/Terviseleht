@@ -7,7 +7,7 @@ namespace telBookService.Code.Classes
 {
     public static class SContactMethods
     {
-        public List<SContact> getSContactsByUser(User user) 
+        public static List<SContact> getSContactsByUser(User user) 
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {

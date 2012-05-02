@@ -43,6 +43,19 @@ namespace telBookService
             }
         }
 
+        public static void deleteUserByid(int id)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = (from x in db.Users where x.ID == id select x).FirstOrDefault();
+                if (query != null)
+                {
+                    query.Kustutatud = DateTime.Now;
+                    db.SubmitChanges();
+                }
+            }
+        }
+
         public static void deleteUserPermanentlyById(int id)
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
@@ -50,6 +63,20 @@ namespace telBookService
                 var query = (from x in db.Users where x.ID == id select x).FirstOrDefault();
                 db.Users.DeleteOnSubmit(query);
                 db.SubmitChanges();
+            }
+        }
+
+        public static void updateUser(User usr)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = (from x in db.Users where x.ID == usr.Id select x).FirstOrDefault();
+                if (query != null)
+                {
+                    query = usr.mapToDbUser();
+                    query.Muudetud = DateTime.Now;
+                    db.SubmitChanges();
+                }
             }
         }
     }

@@ -49,6 +49,19 @@ namespace telBookService
             }
         }
 
+        public static void deleteContactById(int id)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = (from x in db.Contacts where x.ID == id select x).FirstOrDefault();
+                if (query != null)
+                {
+                    query.Kustutatud = DateTime.Now;
+                    db.SubmitChanges();
+                }
+            }
+        }
+
         public static void deleteContactPermanentlyById(int id)
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
@@ -56,6 +69,20 @@ namespace telBookService
                 var result = (from x in db.Contacts where x.ID == id select x).FirstOrDefault();
                 db.Contacts.DeleteOnSubmit(result);
                 db.SubmitChanges();
+            }
+        }
+
+        public static void updateContact(Contact cont)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = (from x in db.Contacts where x.ID == cont.Id select x).FirstOrDefault();
+                if (query != null)
+                {
+                    query = cont.mapToDbContact();
+                    query.Muudetud = DateTime.Now;
+                    db.SubmitChanges();
+                }
             }
         }
     }

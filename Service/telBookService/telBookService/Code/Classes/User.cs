@@ -91,15 +91,29 @@ namespace telBookService
         public DBA.Baas.User mapToDbUser()
         {
             DBA.Baas.User user = new DBA.Baas.User();
-            user.Username = this.Username;
-            user.Password = this.Password;
-            user.Role_fk = this.Role;
-            user.E_mail = this.Email;
-            user.Loodud = this.Loodud;
-            user.Muudetud = this.Muudetud;
-            user.Kustutatud = this.Kustutatud;
+            user.ID = this._id;
+            user.Username = this._username;
+            user.Password = this._password;
+            user.Role_fk = this._role;
+            user.E_mail = this._email;
+            user.Loodud = this._loodud;
+            user.Muudetud = this._muudetud;
+            user.Kustutatud = this._kustutatud;
 
             return user;
+        }
+
+        public void save(User usr)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = (from x in db.Users where x.ID == this.Id select x).FirstOrDefault();
+
+                if (query == null)
+                {
+                    UserMethods.addUser(this);
+                }
+            }
         }
     }
 }

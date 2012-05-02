@@ -119,6 +119,7 @@ namespace telBookService
         public DBA.Baas.Contact mapToDbContact()
         {
             DBA.Baas.Contact kont = new DBA.Baas.Contact();
+            kont.ID = this._id;
             kont.Eesnimi = this.FirstName;
             kont.Perenimi = this.LastName;
             kont.Aadress = this.Address;
