@@ -1,0 +1,5 @@
+C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\WCFTestClient\bin\WCFTestClient.dll
+C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\WCFTestClient\bin\WCFTestClient.pdb
+C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\WCFTestClient\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\WCFTestClient\obj\Debug\WCFTestClient.dll
+C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\WCFTestClient\obj\Debug\WCFTestClient.pdb
