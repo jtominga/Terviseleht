@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace telBookService.Code.Classes
+namespace telBookService
 {
     public static class SContactMethods
     {

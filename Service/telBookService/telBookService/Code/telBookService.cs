@@ -2,168 +2,83 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data;
-using System.Data.SqlClient;
-using System.Security.Cryptography;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 
 namespace telBookService
 {
 
+
     [ServiceContract]
     public interface ItelBookService
     {
         [OperationContract]
-        bool submitkontakt(Contact kontakt);
+        List<Contact> getAllContacts();
         [OperationContract]
-        List<Contact> getContacts(DAuth autenditav);
+        void deleteContactPermanentlyById(int id);
         [OperationContract]
-        bool submitkasutaja(User user);
+        void updateContact(Contact cont);
         [OperationContract]
-        bool submitJagatudContact(SContact jagatudContact);
+        List<Contact> getContactsByUser(User usr);
         [OperationContract]
-        AuthData AutendiKasutaja(DAuth autenditav);
+        Contact getContactById(int id);
+        [OperationContract]
+        Contact getContactByName(string nimi);
+        [OperationContract]
+        Contact getContactBytel(string tel);
+        [OperationContract]
+        Contact getContactByEmail(string email);
+        [OperationContract]
+        Contact getContactBySkype(string skype);
     }
 
-    //[ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
-    //public class telBookService : ItelBookService
-    //{
-    //    List<Contact> kontaktid = new List<Contact>();
-    //    List<User> users = new List<User>();
-    //    List<JagatudContact> jagatudContaktid = new List<JagatudContact>();
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+    public class telBookService : ItelBookService
+    {
 
-    //    public bool submitkontakt(Contact kontakt)
-    //    {
-    //        try
-    //        {
-    //            AuthPaisest(kontakt.authData);
-    //            kontaktid.Add(mapDContactToDaoContact(kontakt));
-    //        }
-    //        catch (Exception)
-    //        { return false; }
-    //        return true;
-    //    }
+        public List<Contact> getAllContacts()
+        {
+            return ContactMethods.getAllContacts();
+        }
 
-    //    public bool submitkasutaja(User user)
-    //    {
-    //        try
-    //        {
-    //            AuthPaisest(user.authData);
-    //            users.Add(mapDUserToDaoUser(user));
-    //        }
-    //        catch (Exception)
-    //        { return false; }
-    //        return true;
-    //    }
+        public void deleteContactPermanentlyById(int id)
+        {
+            ContactMethods.deleteContactPermanentlyById(id);
+        }
 
-    //    public bool submitJagatudContact(SContact jagatudContact)
-    //    {
-    //        try
-    //        {
-    //            AuthPaisest(jagatudContact.authData);
-    //            jagatudContaktid.Add(mapDSContactToDaoJagatudContact(jagatudContact));
-    //        }
-    //        catch (Exception)
-    //        { return false; }
-    //        return true;
-    //    }
+        public void updateContact(Contact cont)
+        {
+            ContactMethods.updateContact(cont);
+        }
 
-        //public AuthData AutendiKasutaja(DAuth autenditav)
-        //{ return Autendi(autenditav.authData); }
+        public List<Contact> getContactsByUser(User usr)
+        {
+            return ContactMethods.getContactsByUser(usr);
+        }
 
-        //private AuthData Autendi(AuthData autenditav)
-        //{
-        //    if (string.IsNullOrEmpty(autenditav.Username.ToString()) == false)
-        //    {
-        //        string KontUser = autenditav.Username.ToString();
-        //        if (string.IsNullOrEmpty(autenditav.Passwordhash.ToString()) == false)
-        //        {
+        public Contact getContactById(int id)
+        {
+            return ContactMethods.getContactById(id);
+        }
 
-        //            DBA.Baas.ProductionDataContext Ussr = new DBA.Baas.ProductionDataContext();
-        //            var UUdre = from l in Ussr.Users
-        //                        where l.Username.ToString() == autenditav.Username
-        //                        select l;
-        //            if (UUdre != null)
-        //            {
-        //                int Olemeid = UUdre.Count();
-        //                if (Olemeid != 0)
-        //                {
-        //                    foreach (var l in UUdre)
-        //                    {
-        //                        if (l.Password == autenditav.Passwordhash.ToString())
-        //                        {
-        //                            autenditav.Isloggedin = true;
-        //                            autenditav.Role = l.Role_fk;
-        //                            return autenditav;
-        //                        }
-        //                    }
-        //                }
-        //            }
+        public Contact getContactByName(string nimi)
+        {
+            return ContactMethods.getContactByName(nimi);
+        }
 
-        //        }
-        //    }
-        //    return null;
-        //}
+        public Contact getContactBytel(string tel)
+        {
+            return ContactMethods.getContactByTel(tel);
+        }
 
-        //private Contact mapDContactToDaoContact(Contact kontakt)
-        //{
-        //    Contact newContact = new Contact();
-        //    newContact.Aadress = kontakt.address;
-        //    newContact.E_mail = kontakt.email;
-        //    newContact.Eesnimi = kontakt.firstName;
-        //    newContact.Perenimi = kontakt.lastName;
-        //    newContact.Telefon = kontakt.tel;
-        //    newContact.Skype = kontakt.skype;
-        //    newContact.Loodud = DateTime.Now;
-        //    //TODO!!!
-        //    //newContact.User_fk = kontakt.submitter;
-        //    return newContact;
-        //}
+        public Contact getContactByEmail(string email)
+        {
+            return ContactMethods.getContactByEmail(email);
+        }
 
-        //private User mapDUserToDaoUser(User kasutaja)
-        //{
-        //    User newUser = new User();
-        //    newUser.Username = kasutaja.Username;
-        //    newUser.Password = kasutaja.Password;
-        //    newUser.E_mail = kasutaja.Email;
-        //    newUser.Loodud = DateTime.Now;
-        //    return newUser;
-        //}
-
-        //private JagatudContact mapDSContactToDaoJagatudContact(SContact jagatudContact)
-        //{
-        //    JagatudContact newUser = new JagatudContact();
-        //    newUser.ContactID = jagatudContact.ContactID;
-        //    newUser.UserID = jagatudContact.UserID;
-        //    newUser.AlgusKP = jagatudContact.AlgusKP;
-        //    newUser.LoppKP = jagatudContact.LoppKP;
-        //    return newUser;
-        //}
-
-        //private AuthData AuthPaisest(AuthData authenditav)
-        //{
-        //    AuthData tulem = Autendi(authenditav);
-        //    if (tulem == null)
-        //    {
-        //        throw new Exception("Authentimine ebaonnetsus.");
-        //    }
-        //    return tulem;
-        //}
-
-        //public List<Contact> getContacts(DAuth authData)
-        //{
-        //    AuthData autenditudKasutaja = null;
-        //    try
-        //    {
-        //        autenditudKasutaja = AuthPaisest(authData.authData);
-        //    }
-        //    catch (Exception)
-        //    { return null; }
-
-        //    return kontaktid;
-        //}
-
-
-    //}
+        public Contact getContactBySkype(string skype)
+        {
+            return ContactMethods.getContactBySkype(skype);
+        }
+    }
 }

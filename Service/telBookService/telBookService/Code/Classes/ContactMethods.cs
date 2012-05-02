@@ -85,5 +85,41 @@ namespace telBookService
                 }
             }
         }
+
+        public static Contact getContactByName(string name)
+        {
+             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+             {
+                 var results = from x in db.Contacts where x.Eesnimi == name select new Contact(x);
+                 return results.ToList().FirstOrDefault();
+             }
+        }
+
+        public static Contact getContactByEmail(string email)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var results = from x in db.Contacts where x.E_mail == email select new Contact(x);
+                return results.ToList().FirstOrDefault();
+            }
+        }
+
+        public static Contact getContactByTel(string tel)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var results = from x in db.Contacts where x.Telefon == tel select new Contact(x);
+                return results.ToList().FirstOrDefault();
+            }
+        }
+
+        public static Contact getContactBySkype(string skype)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var results = from x in db.Contacts where x.Skype == skype select new Contact(x);
+                return results.ToList().FirstOrDefault();
+            }
+        }
     }
 }

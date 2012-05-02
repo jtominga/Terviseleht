@@ -75,5 +75,17 @@ namespace telBookService
 
             return scont;
         }
+
+        public void save()
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = (from x in db.JagatudContacts where x.ID == this._id select x).FirstOrDefault();
+                if (query == null)
+                {
+                    SContactMethods.addSharedContact(this);
+                }
+            }
+        }
     }
 }
