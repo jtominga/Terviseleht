@@ -19,17 +19,17 @@ namespace telBookService
         [OperationContract]
         void saveContact(Contact cont);
         [OperationContract]
-        List<Contact> getContactsByUser(User usr);
+        List<Contact> getContactsByUser(User usr, int count);
         [OperationContract]
-        Contact getContactById(int id);
+        List<Contact> getContactById(int id, int count);
         [OperationContract]
-        Contact getContactByName(string nimi);
+        List<Contact> getContactByName(string nimi, int count);
         [OperationContract]
-        Contact getContactBytel(string tel);
+        List<Contact> getContactBytel(string tel, int count);
         [OperationContract]
-        Contact getContactByEmail(string email);
+        List<Contact> getContactByEmail(string email, int count);
         [OperationContract]
-        Contact getContactBySkype(string skype);
+        List<Contact> getContactBySkype(string skype, int count);
     }
 
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
@@ -51,9 +51,9 @@ namespace telBookService
             cont.save();
         }
 
-        public List<Contact> getContactsByUser(User usr)
+        public List<Contact> getContactsByUser(User usr, int count)
         {
-            return ContactMethods.getContactsByUser(usr);
+            return ContactMethods.getContactsByUser(usr, count);
         }
 
         public Contact getContactById(int id)
@@ -61,24 +61,24 @@ namespace telBookService
             return ContactMethods.getContactById(id);
         }
 
-        public Contact getContactByName(string nimi)
+        public List<Contact> getContactByName(string nimi, int count)
         {
-            return ContactMethods.getContactByName(nimi);
+            return ContactMethods.getContactsByName(nimi, count);
         }
 
-        public Contact getContactBytel(string tel)
+        public List<Contact> getContactBytel(string tel, int count)
         {
-            return ContactMethods.getContactByTel(tel);
+            return ContactMethods.getContactsByTel(tel, count);
         }
 
-        public Contact getContactByEmail(string email)
+        public List<Contact> getContactByEmail(string email, int count)
         {
-            return ContactMethods.getContactByEmail(email);
+            return ContactMethods.getContactsByEmail(email, count);
         }
 
-        public Contact getContactBySkype(string skype)
+        public List<Contact> getContactBySkype(string skype, int count)
         {
-            return ContactMethods.getContactBySkype(skype);
+            return ContactMethods.getContactsBySkype(skype, count);
         }
     }
 }

@@ -27,11 +27,11 @@ namespace telBookService
             }
         }
 
-        public static List<Contact> getContactsByUser(User usr)
+        public static List<Contact> getContactsByUser(User usr, int count)
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = from x in db.Contacts where x.ID == usr.Id select new Contact(x);
+                var results = (from x in db.Contacts where x.ID == usr.Id orderby x.ID select new Contact(x))).Take(count);
 
                 return results.ToList();
             }
@@ -86,39 +86,39 @@ namespace telBookService
             }
         }
 
-        public static Contact getContactByName(string name)
+        public static List<Contact> getContactsByName(string name, int count)
         {
              using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
              {
-                 var results = from x in db.Contacts where x.Eesnimi == name select new Contact(x);
-                 return results.ToList().FirstOrDefault();
+                 var results = (from x in db.Contacts where x.Eesnimi == name orderby x.ID ascending select new Contact(x)).Take(count);
+                 return results.ToList();
              }
         }
 
-        public static Contact getContactByEmail(string email)
+        public static List<Contact> getContactsByEmail(string email, int count)
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = from x in db.Contacts where x.E_mail == email select new Contact(x);
-                return results.ToList().FirstOrDefault();
+                var results = (from x in db.Contacts where x.E_mail == email orderby x.ID ascending select new Contact(x)).Take(count);
+                return results.ToList();
             }
         }
 
-        public static Contact getContactByTel(string tel)
+        public static List<Contact> getContactsByTel(string tel, int count)
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = from x in db.Contacts where x.Telefon == tel select new Contact(x);
-                return results.ToList().FirstOrDefault();
+                var results = (from x in db.Contacts where x.Telefon == tel orderby x.ID ascending select new Contact(x)).Take(count);
+                return results.ToList();
             }
         }
 
-        public static Contact getContactBySkype(string skype)
+        public static List<Contact> getContactsBySkype(string skype, int count)
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = from x in db.Contacts where x.Skype == skype select new Contact(x);
-                return results.ToList().FirstOrDefault();
+                var results = (from x in db.Contacts where x.Skype == skype orderby x.ID ascending select new Contact(x)).Take(count);
+                return results.ToList();
             }
         }
     }
