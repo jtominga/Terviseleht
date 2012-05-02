@@ -30,7 +30,7 @@ namespace telBookService
         public int Id
         {
             get { return _id; }
-            //set { _id = value; }
+            set { _id = value; }
         }
         [DataMember]
         public string FirstName
