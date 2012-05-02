@@ -103,7 +103,7 @@ namespace telBookService
             return user;
         }
 
-        public void save(User usr)
+        public void save()
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
@@ -113,6 +113,7 @@ namespace telBookService
                 {
                     UserMethods.addUser(this);
                 }
+                else UserMethods.updateUser(this);
             }
         }
     }

@@ -104,15 +104,18 @@ namespace telBookService
             this.Kustutatud = cont.Kustutatud.GetValueOrDefault();
         }
 
-        public void save(User usr)
+        public void save()
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var query = (from x in ContactMethods.getContactsByUser(usr) where x.Id == this.Id select x).FirstOrDefault();
+                var query = ContactMethods.getContactById(this._id);
 
-                if (query == null) {
+                if (query == null)
+                {
                     ContactMethods.addContact(this);
                 }
+
+                else ContactMethods.updateContact(this);
             }
         }
 
