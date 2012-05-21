@@ -23,6 +23,7 @@ namespace telBookService
         private DateTime _loodud;
         private DateTime _muudetud;
         private DateTime _kustutatud;
+        private int _userfk;
         #endregion
 
         #region properties
@@ -86,6 +87,12 @@ namespace telBookService
             get { return _kustutatud; }
             set { _kustutatud = value; }
         }
+        [DataMember]
+        public int Userfk
+        {
+            get { return _userfk; }
+            set { _userfk = value; }
+        }
         #endregion
 
         public Contact() { }
@@ -102,6 +109,7 @@ namespace telBookService
             this.Loodud = cont.Loodud;
             this.Muudetud = cont.Muudetud.GetValueOrDefault();
             this.Kustutatud = cont.Kustutatud.GetValueOrDefault();
+            this.Userfk = cont.User_fk;
         }
 
         public void save()
@@ -132,6 +140,7 @@ namespace telBookService
             kont.Loodud = this.Loodud;
             kont.Muudetud = this.Muudetud;
             kont.Kustutatud = this.Kustutatud;
+            kont.User_fk = this.Userfk;
 
             return kont;
         }

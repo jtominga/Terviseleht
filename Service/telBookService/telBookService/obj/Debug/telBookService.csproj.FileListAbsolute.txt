@@ -16,3 +16,9 @@ C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\telBo
 C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\telBookService\bin\Debug\telBookService.dll.config
 C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\telBookService\bin\Debug\telBookService.dll
 C:\Users\Riper\Desktop\jtominga-Terviseleht-9d49093\Service\telBookService\telBookService\bin\Debug\telBookService.pdb
+C:\Users\Jones\Desktop\VR2\Service\telBookService\telBookService\bin\Debug\telBookService.dll.config
+C:\Users\Jones\Desktop\VR2\Service\telBookService\telBookService\bin\Debug\telBookService.dll
+C:\Users\Jones\Desktop\VR2\Service\telBookService\telBookService\bin\Debug\telBookService.pdb
+C:\Users\Jones\Desktop\VR2\Service\telBookService\telBookService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jones\Desktop\VR2\Service\telBookService\telBookService\obj\Debug\telBookService.dll
+C:\Users\Jones\Desktop\VR2\Service\telBookService\telBookService\obj\Debug\telBookService.pdb

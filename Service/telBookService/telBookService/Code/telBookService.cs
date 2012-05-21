@@ -48,7 +48,7 @@ namespace telBookService
 
         public void saveContact(Contact cont)
         {
-            cont.save();
+            ContactMethods.addContact(cont);
         }
 
         public List<Contact> getContactsByUser(User usr, int count)
