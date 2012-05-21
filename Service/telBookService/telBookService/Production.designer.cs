@@ -45,7 +45,7 @@ namespace DBA.Baas
     #endregion
 		
 		public ProductionDataContext() : 
-				base(global::telBookService.Properties.Settings.Default.telBookBaseConnectionString2, mappingSource)
+				base(global::telBookService.Properties.Settings.Default.telBookBaseConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

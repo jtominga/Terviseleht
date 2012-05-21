@@ -66,7 +66,9 @@
     <Compile Include="Code\telBookService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Production.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Production.designer.cs</LastGenOutput>
