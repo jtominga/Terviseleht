@@ -18,10 +18,10 @@ namespace Client
     /// <summary>
     /// Interaction logic for registteri.xaml
     /// </summary>
-    public partial class registteri : Page
+    public partial class registreeri : Page
     {
         ItelBookServiceClient klient;
-        public registteri()
+        public registreeri()
         {
             klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
             InitializeComponent();
@@ -30,9 +30,15 @@ namespace Client
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
+<<<<<<< HEAD:Service/telBookService/Client/registeeri_page.xaml.cs
             user.Email = mail.Text;
             user.Username = usr.Text;
             user.Password = pw.Text;
+=======
+            user.Email = email.Text;
+            user.Username = username.Text;
+            user.Password = password.Text;
+>>>>>>> 497db2d0eff3fe4bd096a15568202bdc03034468:Service/telBookService/Client/registreeri_page.xaml.cs
             user.Role = 1;
 
             klient.saveUser(user);

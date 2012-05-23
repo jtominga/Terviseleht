@@ -60,22 +60,11 @@
     <Compile Include="addcontact_page.xaml.cs">
       <DependentUpon>addcontact_page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin_page.xaml.cs">
-      <DependentUpon>admin_page.xaml</DependentUpon>
-    </Compile>
     <Compile Include="browsecontact_page.xaml.cs">
       <DependentUpon>browsecontact_page.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="login_page.xaml.cs">
-      <DependentUpon>login_page.xaml</DependentUpon>
-    </Compile>
     <Compile Include="registeeri_page.xaml.cs">
       <DependentUpon>registeeri_page.xaml</DependentUpon>
-=======
-    <Compile Include="registreeri_page.xaml.cs">
-      <DependentUpon>registreeri_page.xaml</DependentUpon>
->>>>>>> 497db2d0eff3fe4bd096a15568202bdc03034468
     </Compile>
     <Compile Include="searchcontact_page.xaml.cs">
       <DependentUpon>searchcontact_page.xaml</DependentUpon>
@@ -89,15 +78,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin_page.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="browsecontact_page.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="login_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,7 +94,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="registreeri_page.xaml">
+    <Page Include="registeeri_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
