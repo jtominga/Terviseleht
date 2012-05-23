@@ -24,8 +24,14 @@ namespace Client
         public browsecontact_page()
         {
             klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
-            //Contactsview.DataContext = klient.getAllContacts();
+            Contactsview.DataContext = klient.getAllContacts();
             InitializeComponent();
+        }
+
+        private void Contactsview_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Contact kontakt = new Contact();
+            
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Client
             kontakt.LastName = perenimi.Text;
             kontakt.Skype = skype.Text;
             kontakt.Tel = telefon.Text;
-
+            
             klient.saveContact(kontakt);
         }
     }

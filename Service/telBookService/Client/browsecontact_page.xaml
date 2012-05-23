@@ -8,7 +8,7 @@
 	Title="browsecontact_page">
 
     <Grid>
-        <ListBox HorizontalAlignment="Left" Margin="22,18,0,49" Name="Contactsview" Width="195" />
+        <ListBox HorizontalAlignment="Left" Margin="22,18,0,49" Name="Contactsview" Width="195" SelectionChanged="Contactsview_SelectionChanged" />
         <ListBox Height="204" HorizontalAlignment="Left" Margin="236,20,0,0" Name="detailview" VerticalAlignment="Top" Width="223" />
         <Button Content="Edit" Height="32" HorizontalAlignment="Left" Margin="236,241,0,0" Name="button1" VerticalAlignment="Top" Width="103" />
         <Button Content="Delete" Height="32" HorizontalAlignment="Left" Margin="364,241,0,0" Name="button2" VerticalAlignment="Top" Width="95" />
