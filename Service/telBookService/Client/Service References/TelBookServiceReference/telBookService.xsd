@@ -12,10 +12,10 @@
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Kustutatud" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Kustutatud" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Loodud" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Muudetud" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Muudetud" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Skype" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Userfk" type="xs:int" />
@@ -26,9 +26,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Kustutatud" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Kustutatud" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Loodud" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Muudetud" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Muudetud" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Role" type="xs:int" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />

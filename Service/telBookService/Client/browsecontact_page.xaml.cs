@@ -33,7 +33,10 @@ namespace Client
         {
             foreach (Contact cont in klient.getContactsByUser(top.LoggedUser, 10).ToList()) 
             {
+                if(cont.Kustutatud == null)
                 Contactsview.Items.Add(cont.FirstName + " " + cont.LastName);
+                else
+                Contactsview.Items.Add(cont.FirstName + " " + cont.LastName + " -- > kustutatud");
             }
             top1 = top;
         }
@@ -59,7 +62,7 @@ namespace Client
                 detailview.Items.Add("Adress: " + uus.Address.ToString());
                 if (uus.Muudetud != null)
                 {
-                    detailview.Items.Add("Chanegd: " + uus.Muudetud.ToString());
+                    detailview.Items.Add("Changed: " + uus.Muudetud.ToString());
                 }
                 detailview.Items.Add("Created: " + uus.Loodud.ToString());
 
@@ -81,7 +84,12 @@ namespace Client
         {
             klient.deleteContactById(con_help.Id);
 
-           
+            if (Window.GetWindow(this) is MainWindow)
+            {
+                MainWindow top = (MainWindow)Window.GetWindow(this);
+                top.toBrowsePage();
+            }
+        
         }
     }
 }

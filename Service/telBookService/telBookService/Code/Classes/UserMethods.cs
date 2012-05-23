@@ -44,7 +44,8 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                DBA.Baas.User newUser = user.mapToDbUser();
+                DBA.Baas.User newUser = new DBA.Baas.User();
+                user.mapToDbUser(newUser);
                 newUser.Loodud = System.DateTime.Now;
                 newUser.Kustutatud = null;
                 newUser.Muudetud = null;
@@ -83,7 +84,7 @@ namespace telBookService
                 var query = (from x in db.Users where x.ID == usr.Id select x).FirstOrDefault();
                 if (query != null)
                 {
-                    query = usr.mapToDbUser();
+                    usr.mapToDbUser(query);
                     query.Muudetud = DateTime.Now;
                     db.SubmitChanges();
                 }

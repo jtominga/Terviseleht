@@ -52,9 +52,7 @@ namespace Client
 
         private void btn_BrowseContact_Click(object sender, RoutedEventArgs e)
         {
-            browsecontact_page page = new browsecontact_page();
-            _mainFrame.NavigationService.Navigate(page);
-            page.displayContacts(this);
+            toBrowsePage();
         }
 
         private void btn_logout_Click(object sender, RoutedEventArgs e)
@@ -71,6 +69,13 @@ namespace Client
             addcontact_page page = new addcontact_page();
             _mainFrame.NavigationService.Navigate(page);
             page.editContact(con);
+        }
+
+        public void toBrowsePage()
+        {
+            browsecontact_page page = new browsecontact_page();
+            _mainFrame.NavigationService.Navigate(page);
+            page.displayContacts(this);
         }
     }
 }

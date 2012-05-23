@@ -21,8 +21,8 @@ namespace telBookService
         private string _skype;
         private string _address;
         private DateTime _loodud;
-        private DateTime _muudetud;
-        private DateTime _kustutatud;
+        private DateTime? _muudetud;
+        private DateTime? _kustutatud;
         private int _userfk;
         #endregion
 
@@ -76,13 +76,13 @@ namespace telBookService
             set { _loodud = value; }
         }
         [DataMember]
-        public DateTime Muudetud
+        public DateTime? Muudetud
         {
             get { return _muudetud; }
             set { _muudetud = value; }
         }
         [DataMember]
-        public DateTime Kustutatud
+        public DateTime? Kustutatud
         {
             get { return _kustutatud; }
             set { _kustutatud = value; }
@@ -107,8 +107,23 @@ namespace telBookService
             this._skype = cont.Skype;
             this._address = cont.Aadress;
             this.Loodud = cont.Loodud;
-            this.Muudetud = cont.Muudetud.GetValueOrDefault();
-            this.Kustutatud = cont.Kustutatud.GetValueOrDefault();
+            if (cont.Muudetud == DateTime.MinValue)
+            {
+                this.Muudetud = null;
+            }
+            else
+            {
+                this.Muudetud = cont.Muudetud;
+            }
+            if (cont.Kustutatud == DateTime.MinValue)
+            {
+                this.Kustutatud = null;
+            }
+            else
+            {
+                this.Kustutatud = cont.Kustutatud;
+            }  
+
             this.Userfk = cont.User_fk;
         }
 
@@ -127,9 +142,8 @@ namespace telBookService
             }
         }
 
-        public DBA.Baas.Contact mapToDbContact()
+        public void mapToDbContact(DBA.Baas.Contact kont)
         {
-            DBA.Baas.Contact kont = new DBA.Baas.Contact();
             kont.ID = this._id;
             kont.Eesnimi = this.FirstName;
             kont.Perenimi = this.LastName;
@@ -137,12 +151,10 @@ namespace telBookService
             kont.E_mail = this.Email;
             kont.Skype = this.Skype;
             kont.Telefon = this.Tel;
-            kont.Loodud = this.Loodud;
+            kont.Loodud =  this.Loodud;
             kont.Muudetud = this.Muudetud;
             kont.Kustutatud = this.Kustutatud;
             kont.User_fk = this.Userfk;
-
-            return kont;
         }
     }
 }

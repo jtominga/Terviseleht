@@ -22,6 +22,7 @@ namespace Client
     {
         ItelBookServiceClient klient;
         private int id = -1;
+        private DateTime loodud = DateTime.MinValue;
         public addcontact_page()
         {
             InitializeComponent();
@@ -46,13 +47,17 @@ namespace Client
             {
 
                 kontakt.Id = id;
+                kontakt.Loodud = loodud;
 
             }
             klient.saveContact(kontakt);
 
 
                 id = -1;
-
+                if (Window.GetWindow(this) is MainWindow)
+                {
+                    top.toBrowsePage();
+                }
         }
 
         public void editContact(Contact kontakt)
@@ -65,6 +70,7 @@ namespace Client
             skype.Text =kontakt.Skype;
             telefon.Text = kontakt.Tel;
             id = kontakt.Id;
+            loodud = kontakt.Loodud;
         }
     }
 }
