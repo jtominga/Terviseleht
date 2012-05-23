@@ -16,7 +16,7 @@ using Client.TelBookServiceReference;
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for registteri.xaml
+    /// Interaction logic for registreeri.xaml
     /// </summary>
     public partial class registreeri : Page
     {
@@ -30,18 +30,25 @@ namespace Client
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-<<<<<<< HEAD:Service/telBookService/Client/registeeri_page.xaml.cs
-            user.Email = mail.Text;
-            user.Username = usr.Text;
-            user.Password = pw.Text;
-=======
             user.Email = email.Text;
             user.Username = username.Text;
-            user.Password = password.Text;
->>>>>>> 497db2d0eff3fe4bd096a15568202bdc03034468:Service/telBookService/Client/registreeri_page.xaml.cs
+            user.Password = password.Password;
             user.Role = 1;
 
             klient.saveUser(user);
+
+            login_window main = new login_window();
+            App.Current.MainWindow = main;
+            main.Show();
+            Window.GetWindow(this).Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            login_window main = new login_window();
+            App.Current.MainWindow = main;
+            main.Show();
+            Window.GetWindow(this).Close();
         }
     }
 }

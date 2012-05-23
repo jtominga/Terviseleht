@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Client.TelBookServiceReference;
 
 namespace Client
 {
@@ -19,14 +20,38 @@ namespace Client
     /// </summary>
     public partial class login_page : Page
     {
+        ItelBookServiceClient klient;
+
         public login_page()
         {
             InitializeComponent();
+            klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
         }
 
-        private void login_Click(object sender, RoutedEventArgs e)
+        private void btn_login_Click(object sender, RoutedEventArgs e)
         {
+            string name = text_username.Text;
+            string pswd = text_password.Password;
 
+            User user = klient.login(name, pswd);
+
+            if (user != null)
+            {
+                MainWindow main = new MainWindow();
+                App.Current.MainWindow = main;
+                main.Show();
+                Window.GetWindow(this).Close();
+            }
         }
+
+        private void btn_reg_Click(object sender, RoutedEventArgs e)
+        {
+            Registreeri_window main = new Registreeri_window();
+            App.Current.MainWindow = main;
+            main.Show();
+            Window.GetWindow(this).Close();
+        }
+
+
     }
 }

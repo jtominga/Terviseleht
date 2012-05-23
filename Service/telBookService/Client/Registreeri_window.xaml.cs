@@ -9,19 +9,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for admin_page.xaml
+    /// Interaction logic for Registreeri_window.xaml
     /// </summary>
-    public partial class admin_page : Page
+    public partial class Registreeri_window : Window
     {
-        public admin_page()
+        public Registreeri_window()
         {
             InitializeComponent();
+            frame.NavigationService.Navigate(new Uri("registreeri_page.xaml", UriKind.Relative));
         }
     }
 }

@@ -21,11 +21,12 @@ namespace Client
     {
         ItelBookServiceClient klient;
 
+
         public MainWindow()
         {
             // ItelBookServiceClient client = new ItelBookServiceClient("TelBookServiceReference.ItelBookService");
             InitializeComponent();
-            _mainFrame.NavigationService.Navigate(new Uri("browsecontact_page.xaml", UriKind.Relative));
+            _mainFrame.NavigationService.Navigate(new Uri("searchcontact_page.xaml", UriKind.Relative));
             klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
         }
 
@@ -48,15 +49,6 @@ namespace Client
             _mainFrame.NavigationService.Navigate(new Uri("browsecontact_page.xaml", UriKind.Relative));
         }
 
-        private void registreeri_Click(object sender, RoutedEventArgs e)
-        {
-            _mainFrame.NavigationService.Navigate(new Uri("registeeri_page.xaml", UriKind.Relative));
-        }
-
-        private void login_Click(object sender, RoutedEventArgs e)
-        {
-            _mainFrame.NavigationService.Navigate(new Uri("login_page.xaml", UriKind.Relative));
-        }
 
      
     }

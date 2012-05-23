@@ -45,7 +45,7 @@ namespace telBookService
                 newContact.Loodud = System.DateTime.Now;
                 newContact.Muudetud = null;
                 newContact.Kustutatud = null;
-                newContact.User_fk = 6;
+                newContact.User_fk = 1;
 
                 db.Contacts.InsertOnSubmit(newContact);
                 db.SubmitChanges();

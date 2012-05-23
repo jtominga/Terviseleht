@@ -60,22 +60,20 @@
     <Compile Include="addcontact_page.xaml.cs">
       <DependentUpon>addcontact_page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin_page.xaml.cs">
-      <DependentUpon>admin_page.xaml</DependentUpon>
-    </Compile>
     <Compile Include="browsecontact_page.xaml.cs">
       <DependentUpon>browsecontact_page.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="login_page.xaml.cs">
       <DependentUpon>login_page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="registeeri_page.xaml.cs">
-      <DependentUpon>registeeri_page.xaml</DependentUpon>
-=======
+    <Compile Include="login_window.xaml.cs">
+      <DependentUpon>login_window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="registreeri_page.xaml.cs">
       <DependentUpon>registreeri_page.xaml</DependentUpon>
->>>>>>> 497db2d0eff3fe4bd096a15568202bdc03034468
+    </Compile>
+    <Compile Include="Registreeri_window.xaml.cs">
+      <DependentUpon>Registreeri_window.xaml</DependentUpon>
     </Compile>
     <Compile Include="searchcontact_page.xaml.cs">
       <DependentUpon>searchcontact_page.xaml</DependentUpon>
@@ -89,15 +87,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin_page.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="browsecontact_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="login_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="login_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +112,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="registreeri_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Registreeri_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,6 +149,9 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Service References\TelBookServiceReference\Client.TelBookServiceReference.Contact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TelBookServiceReference\Client.TelBookServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TelBookServiceReference\service.wsdl" />
