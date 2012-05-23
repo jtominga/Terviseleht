@@ -29,6 +29,9 @@ namespace Client
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow top = (MainWindow)Window.GetWindow(this);
+            User adder = top.LoggedUser;
+
             Contact kontakt = new Contact();
 
             kontakt.Address = aadress.Text;
@@ -37,6 +40,7 @@ namespace Client
             kontakt.LastName = perenimi.Text;
             kontakt.Skype = skype.Text;
             kontakt.Tel = telefon.Text;
+            kontakt.Userfk = adder.Id;
             
             klient.saveContact(kontakt);
         }

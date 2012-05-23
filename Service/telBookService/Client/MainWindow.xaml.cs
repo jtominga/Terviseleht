@@ -20,6 +20,12 @@ namespace Client
     public partial class MainWindow : Window
     {
         User loggedUser;
+
+        public User LoggedUser
+        {
+            get { return loggedUser; }
+            set { loggedUser = value; }
+        }
         ItelBookServiceClient klient;
 
         public MainWindow()
@@ -46,12 +52,9 @@ namespace Client
 
         private void btn_BrowseContact_Click(object sender, RoutedEventArgs e)
         {
-            _mainFrame.NavigationService.Navigate(new Uri("browsecontact_page.xaml", UriKind.Relative));
-        }
-
-        public void setLoggedUser(User usr)
-        {
-            loggedUser = usr;
+            browsecontact_page page = new browsecontact_page();
+            _mainFrame.NavigationService.Navigate(page);
+            page.displayContacts(this);
         }
      
     }

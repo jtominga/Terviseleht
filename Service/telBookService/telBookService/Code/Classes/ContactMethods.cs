@@ -31,7 +31,7 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = (from x in db.Contacts where x.ID == usr.Id orderby x.ID select new Contact(x)).Take(count);
+                var results = (from x in db.Contacts where x.User_fk == usr.Id orderby x.ID select new Contact(x)).Take(count);
 
                 return results.ToList();
             }
@@ -45,7 +45,6 @@ namespace telBookService
                 newContact.Loodud = System.DateTime.Now;
                 newContact.Muudetud = null;
                 newContact.Kustutatud = null;
-                newContact.User_fk = 1;
 
                 db.Contacts.InsertOnSubmit(newContact);
                 db.SubmitChanges();

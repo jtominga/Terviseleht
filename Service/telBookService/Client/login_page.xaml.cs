@@ -39,7 +39,7 @@ namespace Client
             {
                 MainWindow main = new MainWindow();
                 App.Current.MainWindow = main;
-                main.setLoggedUser(user);
+                main.LoggedUser = user;
                 main.Show();
                 Window.GetWindow(this).Close();
             }

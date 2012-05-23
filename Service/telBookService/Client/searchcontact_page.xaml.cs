@@ -34,33 +34,44 @@ namespace Client
         //Search_btn
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            Contactslist.Items.Clear();
+
             if (radioButtonUsr.IsChecked == true)
             {
-                Contactslist.DataContext = klient.getAllContacts();
+                User arg = klient.getUserByUserName(searchValue.Text);
+                if (arg != null)
+                {
+                    fill(Contactslist, klient.getContactsByUser(arg, 10).ToList());
+                }
             }
             else if (radioButtonName.IsChecked == true)
             {
-                List<Contact> results = klient.getContactByName(searchValue.Text,10).ToList();
-                foreach (Contact res in results) 
-                {
-                    Contactslist.Items.Add(res.FirstName);
-                }
+                fill(Contactslist, klient.getContactByName(searchValue.Text, 10).ToList());
             }
             else if (radioButtonMail.IsChecked == true)
             {
-                Contactslist.DataContext = klient.getContactByEmail(searchValue.Text, 10);
+                fill(Contactslist, klient.getContactByEmail(searchValue.Text, 10).ToList());
             }
             else if (radioButtonTel.IsChecked == true)
             {
-                Contactslist.DataContext = klient.getContactBytel(searchValue.Text, 10);
+                fill(Contactslist, klient.getContactBytel(searchValue.Text, 10).ToList());
             }
             else if (radioButtonSkype.IsChecked == true)
             {
-                Contactslist.DataContext = klient.getContactBySkype(searchValue.Text, 10);
+                fill(Contactslist, klient.getContactBySkype(searchValue.Text, 10).ToList());
             }
             else 
             {
-                Contactslist.DataContext = klient.getAllContacts();
+                MainWindow top = (MainWindow)Window.GetWindow(this);
+                fill(Contactslist, klient.getContactsByUser(top.LoggedUser, 10).ToList());
+            }
+        }
+
+        private void fill(ListBox listbox, List<Contact> list)
+        {
+            foreach (Contact cont in list)
+            {
+                listbox.Items.Add(cont.FirstName + " " + cont.LastName);
             }
         }
 
