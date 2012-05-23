@@ -58,3 +58,5 @@ C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj
 C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\Client.Properties.Resources.resources
 C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\registeeri_page.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\registeeri_page.g.cs

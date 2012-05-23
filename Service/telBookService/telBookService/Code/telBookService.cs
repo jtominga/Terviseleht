@@ -19,6 +19,8 @@ namespace telBookService
         [OperationContract]
         void saveContact(Contact cont);
         [OperationContract]
+        void saveUser(User usr);
+        [OperationContract]
         List<Contact> getContactsByUser(User usr, int count);
         [OperationContract]
         Contact getContactById(int id);
@@ -50,7 +52,10 @@ namespace telBookService
         {
             cont.save();
         }
-
+        public void saveUser(User usr)
+        {
+            usr.save();
+        }
         public List<Contact> getContactsByUser(User usr, int count)
         {
             return ContactMethods.getContactsByUser(usr, count);

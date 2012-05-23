@@ -24,14 +24,25 @@ namespace Client
         public browsecontact_page()
         {
             klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
-            Contactsview.DataContext = klient.getAllContacts();
+            //Contactsview.DataContext = klient.getAllContacts();
             InitializeComponent();
         }
 
         private void Contactsview_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Contact kontakt = new Contact();
-            
+
+            //Contact kontakt = (sender as Contact);
+            //List<String> result = new List<String>();
+            //result.Add(kontakt.FirstName.ToString());
+            //result.Add(kontakt.LastName.ToString());
+            //result.Add(kontakt.Tel.ToString());
+            //result.Add(kontakt.Email.ToString());
+            //result.Add(kontakt.Skype.ToString());
+            //result.Add(kontakt.Address.ToString());
+            //result.Add(kontakt.Muudetud.ToString());
+            //result.Add(kontakt.Loodud.ToString());
+
+            //detailview.DataContext = result;
         }
     }
 }

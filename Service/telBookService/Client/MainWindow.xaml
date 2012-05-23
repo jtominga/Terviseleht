@@ -7,5 +7,6 @@
         <Button Content="Search Contact" Height="33" HorizontalAlignment="Right" Margin="0,336,128,0" Name="btn_SearchContact" VerticalAlignment="Top" Width="101" Click="btn_SearchContact_Click" />
         <Frame x:Name="_mainFrame" Height="330" HorizontalAlignment="Left" VerticalAlignment="Top" Width="503" />
         <Button Content="Browse Contacts" Height="33" HorizontalAlignment="Left" Margin="156,336,0,0" Name="btn_BrowseContact" VerticalAlignment="Top" Width="103" Click="btn_BrowseContact_Click" />
+        <Button Content="Registereeri" Height="33" HorizontalAlignment="Left" Margin="12,336,0,0" Name="reg" VerticalAlignment="Top" Width="96" Click="button1_Click" />
     </Grid>
 </Window>
