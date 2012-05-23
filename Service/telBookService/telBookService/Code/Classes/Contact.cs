@@ -127,9 +127,8 @@ namespace telBookService
             }
         }
 
-        public DBA.Baas.Contact mapToDbContact()
+        public void mapToDbContact(DBA.Baas.Contact kont)
         {
-            DBA.Baas.Contact kont = new DBA.Baas.Contact();
             kont.ID = this._id;
             kont.Eesnimi = this.FirstName;
             kont.Perenimi = this.LastName;
@@ -141,8 +140,6 @@ namespace telBookService
             kont.Muudetud = this.Muudetud;
             kont.Kustutatud = this.Kustutatud;
             kont.User_fk = this.Userfk;
-
-            return kont;
         }
     }
 }

@@ -88,9 +88,8 @@ namespace telBookService
             this.Kustutatud = usr.Kustutatud.GetValueOrDefault();
         }
 
-        public DBA.Baas.User mapToDbUser()
+        public void mapToDbUser(DBA.Baas.User user)
         {
-            DBA.Baas.User user = new DBA.Baas.User();
             user.ID = this._id;
             user.Username = this._username;
             user.Password = this._password;
@@ -99,8 +98,6 @@ namespace telBookService
             user.Loodud = this._loodud;
             user.Muudetud = this._muudetud;
             user.Kustutatud = this._kustutatud;
-
-            return user;
         }
 
         public void save()
