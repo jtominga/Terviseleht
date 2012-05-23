@@ -36,7 +36,6 @@ namespace telBookService
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
                 DBA.Baas.User newUser = user.mapToDbUser();
-                newUser.Role_fk = 1;
                 newUser.Loodud = System.DateTime.Now;
                 newUser.Kustutatud = null;
                 newUser.Muudetud = null;
