@@ -18,6 +18,7 @@
       <xs:element minOccurs="0" name="Muudetud" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Skype" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Userfk" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Contact" nillable="true" type="tns:Contact" />

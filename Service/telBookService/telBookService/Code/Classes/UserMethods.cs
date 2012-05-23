@@ -37,7 +37,8 @@ namespace telBookService
             {
                 DBA.Baas.User newUser = user.mapToDbUser();
                 newUser.Loodud = System.DateTime.Now;
-
+                newUser.Kustutatud = null;
+                newUser.Muudetud = null;
                 db.Users.InsertOnSubmit(newUser);
                 db.SubmitChanges();                
             }

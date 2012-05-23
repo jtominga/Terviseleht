@@ -37,10 +37,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="getContactsByUser">
+  <xs:element name="saveUser">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="usr" nillable="true" type="q3:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getContactsByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="usr" nillable="true" type="q4:User" />
         <xs:element minOccurs="0" name="count" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -48,7 +60,7 @@
   <xs:element name="getContactsByUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactsByUserResult" nillable="true" type="q4:ArrayOfContact" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactsByUserResult" nillable="true" type="q5:ArrayOfContact" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +74,7 @@
   <xs:element name="getContactByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactByIdResult" nillable="true" type="q5:Contact" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactByIdResult" nillable="true" type="q6:Contact" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -77,7 +89,7 @@
   <xs:element name="getContactByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactByNameResult" nillable="true" type="q6:ArrayOfContact" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactByNameResult" nillable="true" type="q7:ArrayOfContact" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -92,7 +104,7 @@
   <xs:element name="getContactBytelResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactBytelResult" nillable="true" type="q7:ArrayOfContact" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactBytelResult" nillable="true" type="q8:ArrayOfContact" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -107,7 +119,7 @@
   <xs:element name="getContactByEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactByEmailResult" nillable="true" type="q8:ArrayOfContact" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactByEmailResult" nillable="true" type="q9:ArrayOfContact" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -122,7 +134,7 @@
   <xs:element name="getContactBySkypeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactBySkypeResult" nillable="true" type="q9:ArrayOfContact" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/telBookService" minOccurs="0" name="getContactBySkypeResult" nillable="true" type="q10:ArrayOfContact" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

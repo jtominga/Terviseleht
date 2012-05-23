@@ -52,6 +52,9 @@ namespace Client.TelBookServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TelField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserfkField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -188,6 +191,19 @@ namespace Client.TelBookServiceReference {
                 if ((object.ReferenceEquals(this.TelField, value) != true)) {
                     this.TelField = value;
                     this.RaisePropertyChanged("Tel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Userfk {
+            get {
+                return this.UserfkField;
+            }
+            set {
+                if ((this.UserfkField.Equals(value) != true)) {
+                    this.UserfkField = value;
+                    this.RaisePropertyChanged("Userfk");
                 }
             }
         }
@@ -481,6 +497,9 @@ namespace Client.TelBookServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItelBookService/saveContact", ReplyAction="http://tempuri.org/ItelBookService/saveContactResponse")]
         void saveContact(Client.TelBookServiceReference.Contact cont);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItelBookService/saveUser", ReplyAction="http://tempuri.org/ItelBookService/saveUserResponse")]
+        void saveUser(Client.TelBookServiceReference.User usr);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItelBookService/getContactsByUser", ReplyAction="http://tempuri.org/ItelBookService/getContactsByUserResponse")]
         Client.TelBookServiceReference.Contact[] getContactsByUser(Client.TelBookServiceReference.User usr, int count);
         
@@ -537,6 +556,10 @@ namespace Client.TelBookServiceReference {
         
         public void saveContact(Client.TelBookServiceReference.Contact cont) {
             base.Channel.saveContact(cont);
+        }
+        
+        public void saveUser(Client.TelBookServiceReference.User usr) {
+            base.Channel.saveUser(usr);
         }
         
         public Client.TelBookServiceReference.Contact[] getContactsByUser(Client.TelBookServiceReference.User usr, int count) {
