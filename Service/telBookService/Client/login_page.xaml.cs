@@ -31,15 +31,7 @@ namespace Client
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
             string name = text_username.Text;
-<<<<<<< HEAD
-<<<<<<< HEAD
             string pswd = text_password.Password;
-=======
-            string pswd = text_password.Text;
->>>>>>> 360ada5648cdb70ff12834732d177159f8598db7
-=======
-            string pswd = text_password.Password;
->>>>>>> d3c44ce8d987de44505f2d1ee32c6446bb4d9f07
 
             User user = klient.login(name, pswd);
 
@@ -52,21 +44,6 @@ namespace Client
                 Window.GetWindow(this).Close();
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        private void btn_reg_Click(object sender, RoutedEventArgs e)
-        {
-            Registreeri_window main = new Registreeri_window();
-            App.Current.MainWindow = main;
-            main.Show();
-            Window.GetWindow(this).Close();
-        }
-
-
-=======
->>>>>>> 360ada5648cdb70ff12834732d177159f8598db7
-=======
 
         private void btn_reg_Click(object sender, RoutedEventArgs e)
         {
@@ -76,6 +53,5 @@ namespace Client
                 top.toRegPage();
             }
         }
->>>>>>> d3c44ce8d987de44505f2d1ee32c6446bb4d9f07
     }
 }

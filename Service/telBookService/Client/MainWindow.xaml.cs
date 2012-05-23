@@ -28,7 +28,6 @@ namespace Client
         }
         ItelBookServiceClient klient;
 
-
         public MainWindow()
         {
             // ItelBookServiceClient client = new ItelBookServiceClient("TelBookServiceReference.ItelBookService");
@@ -58,9 +57,6 @@ namespace Client
             page.displayContacts(this);
         }
 
-<<<<<<< HEAD
-
-=======
         private void btn_logout_Click(object sender, RoutedEventArgs e)
         {
             login_window logWindow = new login_window();
@@ -69,7 +65,12 @@ namespace Client
             this.loggedUser = null;
             this.Close();
         }
->>>>>>> d3c44ce8d987de44505f2d1ee32c6446bb4d9f07
-     
+
+        public void toEditPage(Contact con)
+        {
+            addcontact_page page = new addcontact_page();
+            _mainFrame.NavigationService.Navigate(page);
+            page.editContact(con);
+        }
     }
 }

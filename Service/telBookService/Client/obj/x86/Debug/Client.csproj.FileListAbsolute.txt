@@ -1,0 +1,72 @@
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\bin\Debug\Client.exe
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\bin\Debug\Client.pdb
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\MainWindow.baml
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\App.g.cs
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\Client_MarkupCompile.cache
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\Client.g.resources
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\Client.Properties.Resources.resources
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\Client.exe
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\Client.pdb
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\bin\Debug\Client.exe.config
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\addcontact_page.baml
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\addcontact_page.g.cs
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\searchcontact_page.baml
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\searchcontact_page.g.cs
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\browsecontact_page.baml
+C:\Users\Jones\Desktop\VR2\Service\telBookService\Client\obj\x86\Debug\browsecontact_page.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\bin\Debug\Client.exe.config
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\Client.exe
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\Client.pdb
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\addcontact_page.baml
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\browsecontact_page.baml
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\MainWindow.baml
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\searchcontact_page.baml
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\addcontact_page.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\browsecontact_page.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\MainWindow.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\searchcontact_page.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\App.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\Client_MarkupCompile.cache
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\Client.g.resources
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\Client.Properties.Resources.resources
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\bin\Debug\Client.exe
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\bin\Debug\Client.pdb
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\bin\Debug\Client.exe.config
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\Client.exe
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\Client.pdb
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\bin\Debug\Client.exe
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\bin\Debug\Client.pdb
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\addcontact_page.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\browsecontact_page.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\MainWindow.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\searchcontact_page.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\addcontact_page.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\browsecontact_page.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\searchcontact_page.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\App.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\Client_MarkupCompile.cache
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\Client.g.resources
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\Client.Properties.Resources.resources
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\registreeri_page.baml
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\registreeri_page.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\login_window.baml
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\login_window.g.cs
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\login_page.baml
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\login_page.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\login_page.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\login_window.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\registreeri_page.baml
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\login_page.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\login_window.g.cs
+C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\registreeri_page.g.cs

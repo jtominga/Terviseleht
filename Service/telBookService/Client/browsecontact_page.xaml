@@ -1,0 +1,16 @@
+﻿<Page x:Class="Client.browsecontact_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="333" d:DesignWidth="481"
+	Title="browsecontact_page">
+
+    <Grid>
+        <ListBox HorizontalAlignment="Left" Margin="22,18,0,49" Name="Contactsview" Width="195" SelectionChanged="Contactsview_SelectionChanged" />
+        <ListBox Height="204" HorizontalAlignment="Left" Margin="236,20,0,0" Name="detailview" VerticalAlignment="Top" Width="223" />
+        <Button Content="Edit" Height="32" HorizontalAlignment="Left" Margin="236,241,0,0" Name="button1" VerticalAlignment="Top" Width="103" Click="button1_Click" />
+        <Button Content="Delete" Height="32" HorizontalAlignment="Left" Margin="364,241,0,0" Name="button2" VerticalAlignment="Top" Width="95" Click="button2_Click" />
+    </Grid>
+</Page>

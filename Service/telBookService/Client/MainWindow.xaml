@@ -6,12 +6,7 @@
         <Button Content="Add new contact" Height="33" HorizontalAlignment="Left" Margin="392,336,12,0" Name="btn_AddContact" VerticalAlignment="Top" Width="100" Click="btn_AddContact_Click" />
         <Button Content="Search Contact" Height="33" HorizontalAlignment="Left" Margin="265,336,128,0" Name="btn_SearchContact" VerticalAlignment="Top" Width="100" Click="btn_SearchContact_Click" />
         <Frame x:Name="_mainFrame" Height="330" HorizontalAlignment="Left" VerticalAlignment="Top" Width="503" />
-<<<<<<< HEAD
-        <Button Content="Browse Contacts" Height="33" HorizontalAlignment="Left" Margin="156,336,0,0" Name="btn_BrowseContact" VerticalAlignment="Top" Width="103" Click="btn_BrowseContact_Click" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="greeting" Text="" VerticalAlignment="Top" Width="131" />
-=======
         <Button Content="Browse Contacts" Height="33" HorizontalAlignment="Left" Margin="138,336,264,0" Name="btn_BrowseContact" VerticalAlignment="Top" Width="100" Click="btn_BrowseContact_Click" />
         <Button Content="Logout" Height="33" HorizontalAlignment="Left" Margin="12,336,390,0" Name="btn_logout" VerticalAlignment="Top" Width="100" Click="btn_logout_Click" />
->>>>>>> d3c44ce8d987de44505f2d1ee32c6446bb4d9f07
     </Grid>
 </Window>

@@ -44,5 +44,16 @@ namespace Client
             
             klient.saveContact(kontakt);
         }
+
+        public void editContact(Contact kontakt)
+        {
+            add.Content = "Edit";
+            aadress.Text = kontakt.Address;
+            email.Text =  kontakt.Email;
+            eesnimi.Text =kontakt.FirstName;
+            perenimi.Text =kontakt.LastName;
+            skype.Text =kontakt.Skype;
+            telefon.Text =  kontakt.Tel;
+        }
     }
 }
