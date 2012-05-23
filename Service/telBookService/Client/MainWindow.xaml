@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="420" Width="525">
     <Grid>
-        <Button Content="Add new contact" Height="33" HorizontalAlignment="Left" Margin="391,336,0,0" Name="btn_AddContact" VerticalAlignment="Top" Width="100" Click="btn_AddContact_Click" />
-        <Button Content="Search Contact" Height="33" HorizontalAlignment="Right" Margin="0,336,128,0" Name="btn_SearchContact" VerticalAlignment="Top" Width="101" Click="btn_SearchContact_Click" />
+        <Button Content="Lisa" Height="33" HorizontalAlignment="Left" Margin="395,336,0,0" Name="btn_AddContact" VerticalAlignment="Top" Width="96" Click="btn_AddContact_Click" />
+        <Button Content="Otsi" Height="33" HorizontalAlignment="Right" Margin="0,336,114,0" Name="btn_SearchContact" VerticalAlignment="Top" Width="101" Click="btn_SearchContact_Click" />
         <Frame x:Name="_mainFrame" Height="330" HorizontalAlignment="Left" VerticalAlignment="Top" Width="503" />
-        <Button Content="Browse Contacts" Height="33" HorizontalAlignment="Left" Margin="156,336,0,0" Name="btn_BrowseContact" VerticalAlignment="Top" Width="103" Click="btn_BrowseContact_Click" />
-        <Button Content="Registereeri" Height="33" HorizontalAlignment="Left" Margin="12,336,0,0" Name="reg" VerticalAlignment="Top" Width="96" Click="button1_Click" />
+        <Button Content="Kontaktid" Height="33" HorizontalAlignment="Right" Margin="0,336,221,0" Name="btn_BrowseContact" VerticalAlignment="Top" Width="103" Click="btn_BrowseContact_Click" />
+        <Button Content="Registreeri" Height="33" HorizontalAlignment="Left" Margin="12,336,0,0" Name="reg" VerticalAlignment="Top" Width="74" Click="registreeri_Click" />
+        <Button Content="Logi sisse" Height="33" HorizontalAlignment="Left" Margin="92,336,0,0" Name="button1" VerticalAlignment="Top" Width="81" Click="login_Click" />
     </Grid>
 </Window>

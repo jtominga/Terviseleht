@@ -30,9 +30,10 @@ namespace Client
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-            user.Email = mail.ToString();
-            user.Username = usr.ToString();
-            user.Password = pw.ToString();
+            user.Email = mail.Text;
+            user.Username = usr.Text;
+            user.Password = pw.Text;
+            user.Role = 1;
 
             klient.saveUser(user);
         }

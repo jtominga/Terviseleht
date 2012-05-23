@@ -48,9 +48,14 @@ namespace Client
             _mainFrame.NavigationService.Navigate(new Uri("browsecontact_page.xaml", UriKind.Relative));
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void registreeri_Click(object sender, RoutedEventArgs e)
         {
             _mainFrame.NavigationService.Navigate(new Uri("registeeri_page.xaml", UriKind.Relative));
+        }
+
+        private void login_Click(object sender, RoutedEventArgs e)
+        {
+            _mainFrame.NavigationService.Navigate(new Uri("login_page.xaml", UriKind.Relative));
         }
 
      

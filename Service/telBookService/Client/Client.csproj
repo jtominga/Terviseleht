@@ -63,6 +63,9 @@
     <Compile Include="browsecontact_page.xaml.cs">
       <DependentUpon>browsecontact_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="login_page.xaml.cs">
+      <DependentUpon>login_page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="registeeri_page.xaml.cs">
       <DependentUpon>registeeri_page.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="browsecontact_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="login_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,7 +12,7 @@ namespace telBookService
         //[DataMember]
         public AuthData authData;
 
-        #region fields
+       #region fields
         private int _id;
         private string _username;
         private string _password;

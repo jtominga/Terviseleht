@@ -39,9 +39,8 @@ namespace telBookService
                 newUser.Loodud = System.DateTime.Now;
                 newUser.Kustutatud = null;
                 newUser.Muudetud = null;
-                newUser.Role_fk = 1;
                 db.Users.InsertOnSubmit(newUser);
-                db.SubmitChanges();                
+                db.SubmitChanges();
             }
         }
 
