@@ -1,0 +1,18 @@
+﻿<Page x:Class="Client.login_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="261" d:DesignWidth="278"
+	Title="login_page">
+
+    <Grid>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="65,80,0,0" Name="text_username" VerticalAlignment="Top" Width="150" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="65,125,0,0" Name="text_password" VerticalAlignment="Top" Width="150" />
+        <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="65,60,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="65,105,0,0" Name="label2" VerticalAlignment="Top" />
+        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="150,163,0,0" Name="btn_login" VerticalAlignment="Top" Width="65" Click="btn_login_Click" />
+        <Button Content="Registreeri" Height="23" HorizontalAlignment="Left" Margin="65,163,0,0" Name="btn_reg" VerticalAlignment="Top" Width="65"/>
+    </Grid>
+</Page>

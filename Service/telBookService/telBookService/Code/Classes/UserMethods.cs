@@ -16,6 +16,15 @@ namespace telBookService
             }
         }
 
+        public static User getUserByUserName(string name)
+        {
+            using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
+            {
+                var query = from x in db.Users where x.Username == name select new User(x);
+                return query.FirstOrDefault();
+            }
+        }
+
         public static string getRoleById(int id) 
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
@@ -79,6 +88,16 @@ namespace telBookService
                     db.SubmitChanges();
                 }
             }
+        }
+
+        public static User login(string name, string password)
+        {
+            User usr = getUserByUserName(name);
+            if (usr.Password.Equals(password))
+            {
+                return usr;
+            }
+            else return null;
         }
     }
 }

@@ -63,6 +63,12 @@
     <Compile Include="browsecontact_page.xaml.cs">
       <DependentUpon>browsecontact_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="login_page.xaml.cs">
+      <DependentUpon>login_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="login_window.xaml.cs">
+      <DependentUpon>login_window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="registreeri_page.xaml.cs">
       <DependentUpon>registreeri_page.xaml</DependentUpon>
     </Compile>
@@ -79,6 +85,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="browsecontact_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="login_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="login_window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,6 +142,9 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Service References\TelBookServiceReference\Client.TelBookServiceReference.Contact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TelBookServiceReference\Client.TelBookServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TelBookServiceReference\service.wsdl" />

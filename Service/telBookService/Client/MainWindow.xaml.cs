@@ -25,7 +25,7 @@ namespace Client
         {
             // ItelBookServiceClient client = new ItelBookServiceClient("TelBookServiceReference.ItelBookService");
             InitializeComponent();
-            _mainFrame.NavigationService.Navigate(new Uri("browsecontact_page.xaml", UriKind.Relative));
+            _mainFrame.NavigationService.Navigate(new Uri("searchcontact_page.xaml", UriKind.Relative));
             klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
         }
 

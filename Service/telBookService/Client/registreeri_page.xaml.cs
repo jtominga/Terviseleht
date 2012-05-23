@@ -16,7 +16,7 @@ using Client.TelBookServiceReference;
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for registteri.xaml
+    /// Interaction logic for registreeri.xaml
     /// </summary>
     public partial class registreeri : Page
     {

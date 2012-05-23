@@ -4,10 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="292" d:DesignWidth="509"
+      d:DesignHeight="300" d:DesignWidth="300"
 	Title="registreeri">
 
-    <Grid Height="298" Width="511">
+    <Grid>
         <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="usr" VerticalAlignment="Top" />
         <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="10,45,0,0" Name="pw" VerticalAlignment="Top" />
         <Label Content="e-mail" Height="28" HorizontalAlignment="Left" Margin="12,82,0,0" Name="mail" VerticalAlignment="Top" />
