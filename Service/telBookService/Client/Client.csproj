@@ -60,6 +60,9 @@
     <Compile Include="addcontact_page.xaml.cs">
       <DependentUpon>addcontact_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="admin_page.xaml.cs">
+      <DependentUpon>admin_page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="browsecontact_page.xaml.cs">
       <DependentUpon>browsecontact_page.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Page Include="addcontact_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin_page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
