@@ -19,6 +19,7 @@ namespace Client
     /// </summary>
     public partial class MainWindow : Window
     {
+        User loggedUser;
         ItelBookServiceClient klient;
 
         public MainWindow()
@@ -48,11 +49,10 @@ namespace Client
             _mainFrame.NavigationService.Navigate(new Uri("browsecontact_page.xaml", UriKind.Relative));
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        public void setLoggedUser(User usr)
         {
-            _mainFrame.NavigationService.Navigate(new Uri("registeeri_page.xaml", UriKind.Relative));
+            loggedUser = usr;
         }
-
      
     }
 }

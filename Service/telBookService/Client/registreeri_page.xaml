@@ -4,16 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="261" d:DesignWidth="278"
 	Title="registreeri">
 
     <Grid>
-        <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="usr" VerticalAlignment="Top" />
-        <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="10,45,0,0" Name="pw" VerticalAlignment="Top" />
-        <Label Content="e-mail" Height="28" HorizontalAlignment="Left" Margin="12,82,0,0" Name="mail" VerticalAlignment="Top" />
-        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,10,291,0" Name="username" VerticalAlignment="Top" Width="120" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="100,45,0,0" Name="password" VerticalAlignment="Top" Width="120" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="100,82,0,0" Name="email" VerticalAlignment="Top" Width="120" />
-        <Button Content="Registeeri" Height="23" HorizontalAlignment="Left" Margin="12,131,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="65,28,0,0" Name="usr" VerticalAlignment="Top"/>
+        <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="65,73,0,0" Name="pw" VerticalAlignment="Top" />
+        <Label Content="E-mail" Height="28" HorizontalAlignment="Left" Margin="65,118,0,0" Name="mail" VerticalAlignment="Top"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="65,48,0,0" Name="txt_username" VerticalAlignment="Top" Width="150" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="65,93,0,0" Name="txt_password" VerticalAlignment="Top" Width="150"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="65,138,0,0" Name="txt_email" VerticalAlignment="Top" Width="150"/>
+        <Button Content="Registeeri" Height="23" HorizontalAlignment="Left" Margin="150,178,0,0" Name="btn_reg" VerticalAlignment="Top" Width="65" Click="btn_reg_Click" />
+        <Button Content="Tagasi" Height="23" HorizontalAlignment="Left" Margin="65,178,0,0" Name="btn_back" VerticalAlignment="Top" Width="65" Click="btn_back_Click" />
     </Grid>
 </Page>

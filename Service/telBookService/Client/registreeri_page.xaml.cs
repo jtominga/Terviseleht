@@ -27,15 +27,24 @@ namespace Client
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void btn_reg_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-            user.Email = email.Text;
-            user.Username = username.Text;
-            user.Password = password.Text;
+            user.Username = txt_username.Text;
+            user.Password = txt_password.Password;
+            user.Email = txt_email.Text;
             user.Role = 1;
 
             klient.saveUser(user);
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.GetWindow(this) is login_window)
+            {
+                login_window top = (login_window)Window.GetWindow(this);
+                top.toLogPage();
+            }
         }
     }
 }

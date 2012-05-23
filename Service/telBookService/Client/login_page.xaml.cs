@@ -31,7 +31,7 @@ namespace Client
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
             string name = text_username.Text;
-            string pswd = text_password.Text;
+            string pswd = text_password.Password;
 
             User user = klient.login(name, pswd);
 
@@ -39,8 +39,18 @@ namespace Client
             {
                 MainWindow main = new MainWindow();
                 App.Current.MainWindow = main;
+                main.setLoggedUser(user);
                 main.Show();
                 Window.GetWindow(this).Close();
+            }
+        }
+
+        private void btn_reg_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.GetWindow(this) is login_window)
+            {
+                login_window top = (login_window)Window.GetWindow(this);
+                top.toRegPage();
             }
         }
     }

@@ -9,10 +9,10 @@
 
     <Grid>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="65,80,0,0" Name="text_username" VerticalAlignment="Top" Width="150" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="65,125,0,0" Name="text_password" VerticalAlignment="Top" Width="150" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="65,125,0,0" Name="text_password" VerticalAlignment="Top" Width="150" />
         <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="65,60,0,0" Name="label1" VerticalAlignment="Top" />
         <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="65,105,0,0" Name="label2" VerticalAlignment="Top" />
-        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="150,163,0,0" Name="btn_login" VerticalAlignment="Top" Width="65" Click="btn_login_Click" />
-        <Button Content="Registreeri" Height="23" HorizontalAlignment="Left" Margin="65,163,0,0" Name="btn_reg" VerticalAlignment="Top" Width="65"/>
+        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="150,165,0,0" Name="btn_login" VerticalAlignment="Top" Width="65" Click="btn_login_Click" />
+        <Button Content="Registreeri" Height="23" HorizontalAlignment="Left" Margin="65,165,0,0" Name="btn_reg" VerticalAlignment="Top" Width="65" Click="btn_reg_Click" />
     </Grid>
 </Page>
