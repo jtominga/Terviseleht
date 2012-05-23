@@ -18,10 +18,10 @@ namespace Client
     /// <summary>
     /// Interaction logic for registteri.xaml
     /// </summary>
-    public partial class registteri : Page
+    public partial class registreeri : Page
     {
         ItelBookServiceClient klient;
-        public registteri()
+        public registreeri()
         {
             klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
             InitializeComponent();
