@@ -520,6 +520,9 @@ namespace Client.TelBookServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItelBookService/getContactBySkype", ReplyAction="http://tempuri.org/ItelBookService/getContactBySkypeResponse")]
         Client.TelBookServiceReference.Contact[] getContactBySkype(string skype, int count);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItelBookService/getUserByUserName", ReplyAction="http://tempuri.org/ItelBookService/getUserByUserNameResponse")]
+        Client.TelBookServiceReference.User getUserByUserName(string nimi);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -591,6 +594,10 @@ namespace Client.TelBookServiceReference {
         
         public Client.TelBookServiceReference.Contact[] getContactBySkype(string skype, int count) {
             return base.Channel.getContactBySkype(skype, count);
+        }
+        
+        public Client.TelBookServiceReference.User getUserByUserName(string nimi) {
+            return base.Channel.getUserByUserName(nimi);
         }
     }
 }

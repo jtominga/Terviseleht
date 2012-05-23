@@ -34,6 +34,8 @@ namespace telBookService
         List<Contact> getContactByEmail(string email, int count);
         [OperationContract]
         List<Contact> getContactBySkype(string skype, int count);
+        [OperationContract]
+        User getUserByUserName(string nimi);
     }
 
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
@@ -90,6 +92,11 @@ namespace telBookService
         public List<Contact> getContactBySkype(string skype, int count)
         {
             return ContactMethods.getContactsBySkype(skype, count);
+        }
+
+        public User getUserByUserName(string nimi)
+        {
+            return UserMethods.getUserByUserName(nimi);
         }
     }
 }

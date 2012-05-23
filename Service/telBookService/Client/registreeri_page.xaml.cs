@@ -27,12 +27,18 @@ namespace Client
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void btn_reg_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
+<<<<<<< HEAD
             user.Email = email.Text;
             user.Username = username.Text;
             user.Password = password.Password;
+=======
+            user.Username = txt_username.Text;
+            user.Password = txt_password.Password;
+            user.Email = txt_email.Text;
+>>>>>>> d3c44ce8d987de44505f2d1ee32c6446bb4d9f07
             user.Role = 1;
 
             klient.saveUser(user);
@@ -49,6 +55,15 @@ namespace Client
             App.Current.MainWindow = main;
             main.Show();
             Window.GetWindow(this).Close();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            if (Window.GetWindow(this) is login_window)
+            {
+                login_window top = (login_window)Window.GetWindow(this);
+                top.toLogPage();
+            }
         }
     }
 }

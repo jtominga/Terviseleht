@@ -25,6 +25,16 @@ namespace Client
             frame.NavigationService.Navigate(new Uri("login_page.xaml", UriKind.Relative));
         }
 
+        public void toLogPage()
+        {
+            frame.NavigationService.Navigate(new Uri("login_page.xaml", UriKind.Relative));
+        }
+
+        public void toRegPage()
+        {
+            frame.NavigationService.Navigate(new Uri("registreeri_page.xaml", UriKind.Relative));
+        }
+
         
     }
 }

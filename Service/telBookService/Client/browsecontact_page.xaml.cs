@@ -23,9 +23,16 @@ namespace Client
         ItelBookServiceClient klient;
         public browsecontact_page()
         {
-            klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
-            //Contactsview.DataContext = klient.getAllContacts();
             InitializeComponent();
+            klient = new ItelBookServiceClient("WSHttpBinding_ItelBookService");
+        }
+
+        public void displayContacts(MainWindow top)
+        {
+            foreach (Contact cont in klient.getContactsByUser(top.LoggedUser, 10).ToList()) 
+            {
+                Contactsview.Items.Add(cont.FirstName + " " + cont.LastName);
+            }
         }
 
         private void Contactsview_SelectionChanged(object sender, SelectionChangedEventArgs e)
