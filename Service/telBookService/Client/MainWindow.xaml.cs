@@ -56,6 +56,15 @@ namespace Client
             _mainFrame.NavigationService.Navigate(page);
             page.displayContacts(this);
         }
+
+        private void btn_logout_Click(object sender, RoutedEventArgs e)
+        {
+            login_window logWindow = new login_window();
+            App.Current.MainWindow = logWindow;
+            logWindow.Show();
+            this.loggedUser = null;
+            this.Close();
+        }
      
     }
 }
