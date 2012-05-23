@@ -31,7 +31,11 @@ namespace Client
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
             string name = text_username.Text;
+<<<<<<< HEAD
             string pswd = text_password.Password;
+=======
+            string pswd = text_password.Text;
+>>>>>>> 360ada5648cdb70ff12834732d177159f8598db7
 
             User user = klient.login(name, pswd);
 
@@ -43,6 +47,7 @@ namespace Client
                 Window.GetWindow(this).Close();
             }
         }
+<<<<<<< HEAD
 
         private void btn_reg_Click(object sender, RoutedEventArgs e)
         {
@@ -53,5 +58,7 @@ namespace Client
         }
 
 
+=======
+>>>>>>> 360ada5648cdb70ff12834732d177159f8598db7
     }
 }

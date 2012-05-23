@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\obj\x86\Debug\
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\obj\x86\Debug\
 Client
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Jones\Desktop\VR2\Service\Terviseleht\Service\telBookService\Client\App.xaml
 81599629900
 
 142129296955
 141997438473
 addcontact_page.xaml;browsecontact_page.xaml;login_page.xaml;login_window.xaml;MainWindow.xaml;registreeri_page.xaml;Registreeri_window.xaml;searchcontact_page.xaml;
+=======
+D:\Kool\Võrgurakendused II\TerviseLeht\Service\telBookService\Client\App.xaml
+7-1095748898
+
+131487334094
+14637617180
+addcontact_page.xaml;browsecontact_page.xaml;login_page.xaml;login_window.xaml;MainWindow.xaml;registreeri_page.xaml;searchcontact_page.xaml;
+>>>>>>> 360ada5648cdb70ff12834732d177159f8598db7
 
 False
 
