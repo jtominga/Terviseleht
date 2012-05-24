@@ -33,10 +33,7 @@ namespace Client
         {
             foreach (Contact cont in klient.getContactsByUser(top.LoggedUser, 10).ToList()) 
             {
-                if(cont.Kustutatud == null)
                 Contactsview.Items.Add(cont.FirstName + " " + cont.LastName);
-                else
-                Contactsview.Items.Add(cont.FirstName + " " + cont.LastName + " -- > kustutatud");
             }
             top1 = top;
         }

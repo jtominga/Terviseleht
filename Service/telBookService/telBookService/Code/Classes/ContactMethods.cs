@@ -31,7 +31,7 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = (from x in db.Contacts where x.User_fk == usr.Id orderby x.ID select new Contact(x)).Take(count);
+                var results = (from x in db.Contacts where x.User_fk == usr.Id && x.Kustutatud == null orderby x.ID select new Contact(x)).Take(count);
 
                 return results.ToList();
             }

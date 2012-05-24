@@ -12,7 +12,7 @@
         <Label Content="e-mail" Height="28" HorizontalAlignment="Left" Margin="40,140,0,0" Name="label4" VerticalAlignment="Top" />
         <Label Content="Skype" Height="28" HorizontalAlignment="Left" Margin="40,175,0,0" Name="label5" VerticalAlignment="Top" />
         <Label Content="aadress" Height="28" HorizontalAlignment="Left" Margin="40,210,0,0" Name="label6" VerticalAlignment="Top" Width="58" />
-        <TextBox Height="23" HorizontalAlignment="Right" Margin="0,35,240,0" Name="eesnimi" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="130,35,240,0" Name="eesnimi" VerticalAlignment="Top" Width="120" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="130,70,0,0" Name="perenimi" VerticalAlignment="Top" Width="120" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="130,105,0,0" Name="telefon" VerticalAlignment="Top" Width="120" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="130,140,0,0" Name="email" VerticalAlignment="Top" Width="120" />
