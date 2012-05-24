@@ -74,9 +74,11 @@ namespace Client
 
         private void fill(ListBox listbox, List<Contact> list)
         {
+            MainWindow top = (MainWindow)Window.GetWindow(this);
             foreach (Contact cont in list)
             {
-                listbox.Items.Add(cont.FirstName + " " + cont.LastName);
+                //if (cont.Userfk == top.LoggedUser.Id)
+                    listbox.Items.Add(cont.FirstName + " " + cont.LastName);
             }
         }
 

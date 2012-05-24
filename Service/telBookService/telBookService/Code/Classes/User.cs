@@ -19,8 +19,8 @@ namespace telBookService
         private string _email;
         private int _role;
         private DateTime _loodud;
-        private DateTime _muudetud;
-        private DateTime _kustutatud;
+        private DateTime? _muudetud;
+        private DateTime? _kustutatud;
         #endregion
 
        #region properties
@@ -61,13 +61,13 @@ namespace telBookService
             set { _loodud = value; }
         }
         [DataMember]
-        public DateTime Muudetud
+        public DateTime? Muudetud
         {
             get { return _muudetud; }
             set { _muudetud = value; }
         }
         [DataMember]
-        public DateTime Kustutatud
+        public DateTime? Kustutatud
         {
             get { return _kustutatud; }
             set { _kustutatud = value; }
@@ -84,8 +84,23 @@ namespace telBookService
             this._email = usr.E_mail;
             this._role = usr.Role_fk;
             this.Loodud = usr.Loodud;
-            this.Muudetud = usr.Muudetud.GetValueOrDefault();
-            this.Kustutatud = usr.Kustutatud.GetValueOrDefault();
+            if (usr.Muudetud == DateTime.MinValue)
+            {
+                this.Muudetud = null;
+            }
+            else
+            {
+                this.Muudetud = usr.Muudetud;
+            }
+            if (usr.Kustutatud == DateTime.MinValue)
+            {
+                this.Kustutatud = null;
+            }
+            else
+            {
+                this.Kustutatud = usr.Kustutatud;
+            }  
+
         }
 
         public void mapToDbUser(DBA.Baas.User user)

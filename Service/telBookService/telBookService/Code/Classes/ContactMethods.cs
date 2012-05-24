@@ -11,7 +11,7 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = from x in db.Contacts select new Contact(x);
+                var results = from x in db.Contacts where x.Kustutatud == null select new Contact(x);
 
                 return results.ToList();
             }
@@ -21,7 +21,7 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = from x in db.Contacts where x.ID == id select new Contact(x);
+                var results = from x in db.Contacts where x.ID == id && x.Kustutatud == null select new Contact(x);
 
                 return results.ToList().FirstOrDefault();
             }
@@ -93,7 +93,7 @@ namespace telBookService
         {
              using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
              {
-                 var results = (from x in db.Contacts where x.Eesnimi == name orderby x.ID ascending select new Contact(x)).Take(count);
+                 var results = (from x in db.Contacts where x.Eesnimi == name && x.Kustutatud == null orderby x.ID ascending select new Contact(x)).Take(count);
                  return results.ToList();
              }
         }
@@ -102,7 +102,7 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = (from x in db.Contacts where x.E_mail == email orderby x.ID ascending select new Contact(x)).Take(count);
+                var results = (from x in db.Contacts where x.E_mail == email && x.Kustutatud == null orderby x.ID ascending select new Contact(x)).Take(count);
                 return results.ToList();
             }
         }
@@ -111,7 +111,7 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = (from x in db.Contacts where x.Telefon == tel orderby x.ID ascending select new Contact(x)).Take(count);
+                var results = (from x in db.Contacts where x.Telefon == tel && x.Kustutatud == null orderby x.ID ascending select new Contact(x)).Take(count);
                 return results.ToList();
             }
         }
@@ -120,7 +120,7 @@ namespace telBookService
         {
             using (DBA.Baas.ProductionDataContext db = new DBA.Baas.ProductionDataContext())
             {
-                var results = (from x in db.Contacts where x.Skype == skype orderby x.ID ascending select new Contact(x)).Take(count);
+                var results = (from x in db.Contacts where x.Skype == skype && x.Kustutatud == null orderby x.ID ascending select new Contact(x)).Take(count);
                 return results.ToList();
             }
         }
